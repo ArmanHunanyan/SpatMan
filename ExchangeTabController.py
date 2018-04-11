@@ -557,7 +557,7 @@ class ExchangeTabValidateController(QObject):
 
         def writeErrorField(self, report):
             self.m_file.write("---------------------------------------------------------------------------------\n")
-            self.m_file.write("Feauture:\n")
+            self.m_file.write("Feauture :\n")
             props, errors = self.m_textGenerator.genErrorField(report)
             msg = self._makePropertyTable(props, "\t")
             self.m_file.write(msg)
