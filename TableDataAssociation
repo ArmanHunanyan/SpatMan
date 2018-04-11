@@ -1,0 +1,18 @@
+import json
+
+class TableDataAssociation:
+    def __init__(self):
+        self.m_fileName = ""
+        self.m_tableName = ""
+        self.m_connectionId = 0
+        self.m_columnFieldPairs = ()
+
+class TableDataAssociations:
+    def __init__(self):
+        self.m_associations = []
+
+    def loadFromDirectory(self, dirPath):
+        pass
+
+    def saveToDirectory(self, dirPath):
+        pass

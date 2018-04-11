@@ -1,0 +1,14 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>icons/favicon.ico</file>
+    <file>icons/plus.png</file>
+    <file>icons/minus.png</file>
+    <file>icons/clear.png</file>
+    <file>icons/lock.png</file>
+    <file>icons/local.png</file>
+    <file>icons/edit.png</file>
+    <file>icons/pdf.png</file>
+    <file>icons/html.png</file>
+    <file>icons/text.png</file>
+</qresource>
+</RCC>

@@ -1,0 +1,4943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SpatMan</class>
+ <widget class="QDialog" name="SpatMan">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>871</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+    <pointsize>10</pointsize>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Spatial Manager - SDI Administrator</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_24">
+   <item>
+    <widget class="QTabWidget" name="mainTabWidget">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="statusTip">
+      <string extracomment="General"/>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::North</enum>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="schemasWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <attribute name="title">
+       <string>Schemas</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
+       <item>
+        <widget class="QTabWidget" name="schemaPropertiesTab">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="currentIndex">
+          <number>5</number>
+         </property>
+         <widget class="QWidget" name="schemaPropertiesTabWidget">
+          <attribute name="title">
+           <string>Properties</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_10">
+           <item>
+            <layout class="QVBoxLayout" name="schemaPropsLeftLayout">
+             <item>
+              <layout class="QHBoxLayout" name="schemaPropertiesHorizontalLayout1">
+               <item>
+                <widget class="QLabel" name="schemaPropertiesSurrentSchemaLabel">
+                 <property name="font">
+                  <font>
+                   <underline>true</underline>
+                  </font>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>ForbiddenCursor</cursorShape>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 0, 0)</string>
+                 </property>
+                 <property name="text">
+                  <string>Current Schema</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="schemaPropertiesCurrentSchemaEdit">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="toolTip">
+                  <string extracomment="Read from Global Variable appCURRSCHEMA"/>
+                 </property>
+                 <property name="statusTip">
+                  <string>Set under Configuration.  Double click allows users to select a different schema, log into it.</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="schemaPropertiesHorizontalSpacer2">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="schemaPropertiesGeneralGroupBox">
+               <property name="title">
+                <string>General</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_17">
+                <item>
+                 <widget class="QLabel" name="schemaPropertiesSchemaDescriptionLabel">
+                  <property name="text">
+                   <string>Schema Description</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPlainTextEdit" name="schemaPropertiesSchemaDescriptionPlainTextEdit"/>
+                </item>
+                <item>
+                 <layout class="QFormLayout" name="schemaPropertiesFormLayout1">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="schemaPropertiesLanguageLabel">
+                    <property name="text">
+                     <string>Language</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="schemaPropertiesLanguageComboBox"/>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="schemaPropertiesCharsetLabel">
+                    <property name="toolTip">
+                     <string extracomment="Data stored in sm_db_sett.  VALUES ('T','CHARSET','The character set.','The characterset. Best option is UTF8 is possible.') "/>
+                    </property>
+                    <property name="text">
+                     <string>Characterset</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="schemaPropertiesCharsetsComboBox"/>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="schemaPropertiesSpatialPropertiesGroupBox">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="title">
+                <string>Spatial Properties</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_16">
+                <property name="spacing">
+                 <number>6</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>6</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <layout class="QHBoxLayout" name="schemaPropertiesHorizontalLayout3">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <spacer name="schemaPropertiesHorizontalSpacer1">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Minimum</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>15</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="schemaPropertiesVerticalLayout1">
+                    <item>
+                     <widget class="QLabel" name="schemaPropertiesSRIDLabel">
+                      <property name="text">
+                       <string>SRID</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="schemaPropertiesSRIDEdit">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="toolTip">
+                       <string extracomment="Data stored in sm_db_sett.  VALUES ('T','EPSG_SRID','The EPSG code value','Default EPSG SRID for this schema')"/>
+                      </property>
+                      <property name="statusTip">
+                       <string>EPSG Spatial Reference</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <spacer name="schemaPropertiesHorizontalSpacer3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Minimum</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>30</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="schemaPropertiesVerticalLayout2">
+                    <item>
+                     <widget class="QLabel" name="schemaPropertiesUNITLabel">
+                      <property name="text">
+                       <string>UNITS</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="schemaPropertiesUnitsEdit">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="toolTip">
+                       <string extracomment="Data stored in sm_db_sett.  VALUES ('D','DBUNITS','The db Units','Unit of measure applied in this schema.')"/>
+                      </property>
+                      <property name="statusTip">
+                       <string>Units used for this database</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <spacer name="schemaPropertiesHorizontalSpacer4">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Minimum</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>30</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="schemaPropertiesVerticalLayout3">
+                    <item>
+                     <widget class="QLabel" name="schemaPropertiesPrecisionLabel">
+                      <property name="text">
+                       <string>Precision</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="schemaPropertiesPrecisionEdit">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="toolTip">
+                       <string extracomment="VALUES ('R','db_precs','The Precision in default units','Default precision applied across this schema')"/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <spacer name="schemaPropertiesHorizontalSpacer5">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Minimum</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>15</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QGridLayout" name="schemaPropertiesGridLayout2">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <item row="1" column="3">
+                   <widget class="QLabel" name="schemaPropertiesEastLabel">
+                    <property name="text">
+                     <string>East</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="schemaPropertiesWestEdit">
+                    <property name="toolTip">
+                     <string extracomment="Data stored in sm_db_sett.  VALUES ('D','WESTEXTENTS','The Western Extents','The Western Extents in default SRID coordinates.')"/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLineEdit" name="schemaPropertiesNorthEdit">
+                    <property name="toolTip">
+                     <string extracomment="Data stored in sm_db_sett.  VALUES ('D','NORTHEXTENTS','The Northern Extents','The Northern Extents in default SRID coordinates.')"/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLabel" name="schemaPropertiesWestLabel">
+                    <property name="text">
+                     <string>West</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="schemaPropertiesNorthLabel">
+                    <property name="text">
+                     <string>North</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="3">
+                   <widget class="QLineEdit" name="schemaPropertiesEastEdit">
+                    <property name="toolTip">
+                     <string extracomment="Data stored in sm_db_sett.  VALUES ('D','EASTEXTENTS','The Eastern Extents','The Eastern Extents in default SRID coordinates.')"/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QLineEdit" name="schemaPropertiesSouthEdit">
+                    <property name="toolTip">
+                     <string extracomment="Data stored in sm_db_sett.  VALUES ('D','SOUTHEXTENTS','The Southern Extents','The Southern Extents in default SRID coordinates.')"/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLabel" name="schemaPropertiesSouthLabel">
+                    <property name="text">
+                     <string>South</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <spacer name="schemaPropertiesHorizontalSpacer6">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Minimum</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>15</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="2" column="4">
+                   <spacer name="schemaPropertiesHorizontalSpacer7">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Minimum</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>15</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="schemaPropertiesVerticalLayout4">
+             <item>
+              <widget class="QGroupBox" name="schemaPropertiesGeneralDataPolicyGroupBox">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="title">
+                <string>General Data Policy</string>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <item>
+                 <layout class="QFormLayout" name="schemaPropertiesFormLayout2">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="schemaPropertiesDataAccessLabel">
+                    <property name="text">
+                     <string>Data Access</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="schemaPropertiesCopyrightLabel">
+                    <property name="text">
+                     <string>Copyright</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="schemaPropertiesUserrightLabel">
+                    <property name="text">
+                     <string>Use rights</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QPlainTextEdit" name="schemaPropertiesDataAccessEdit"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPlainTextEdit" name="schemaPropertiesCopyrightEdit"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QPlainTextEdit" name="schemaPropertiesUserrightEdit"/>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="schemaPropertiesContactGroupBox">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="title">
+                <string>Contact</string>
+               </property>
+               <layout class="QFormLayout" name="formLayout_4">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="schemaPropertiesOrganizationLabel">
+                  <property name="toolTip">
+                   <string/>
+                  </property>
+                  <property name="text">
+                   <string>Organisation</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="schemaPropertiesMainContactLabel">
+                  <property name="toolTip">
+                   <string/>
+                  </property>
+                  <property name="text">
+                   <string>Main Contact</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="MappingComboBox" name="schemaPropertiesMainContactCombo">
+                  <property name="toolTip">
+                   <string extracomment="Data stored in sm_db_sett.  VALUES ('T','MAINCONTACTID','The ID of the Main Contact Person.','The ID of the Main Contact Person as stored in the table md_contact.') "/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="schemaPropertiesOrganizationEdit">
+                  <property name="toolTip">
+                   <string extracomment="Data stored in sm_db_sett.  VALUES ('T','CUSTODIAN','The custodian organisation.','The organisation that owns or manages the copyright of a dataset.') "/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="schemaPropertiesHorizontalLayout4">
+               <item>
+                <spacer name="schemaPropertiesHorizontalSpacer8">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="schemaPropertiesResetButton">
+                 <property name="text">
+                  <string>Reset</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="schemaPropertiesSaveButton">
+                 <property name="toolTip">
+                  <string extracomment="Quit the program"/>
+                 </property>
+                 <property name="text">
+                  <string>Save</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_grp">
+          <attribute name="title">
+           <string>Groups</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <layout class="QGridLayout" name="schemasGroupsGridLayout1" columnstretch="1,2">
+             <item row="1" column="0">
+              <layout class="QHBoxLayout" name="schemasGroupsHorizontalLayout4">
+               <item>
+                <widget class="QLabel" name="schemasGroupsManageGroupsLabel">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Manage Groups&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="schemasGroupsHorizontalSpacer4">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item row="2" column="1">
+              <layout class="QHBoxLayout" name="schemasGroupsHorizontalLayout3">
+               <item>
+                <widget class="QPushButton" name="schemasGroupsAddGroupButton">
+                 <property name="statusTip">
+                  <string extracomment="Inserts record into sm_apps.  Set app_name, app_desc, menu_name = app_id"/>
+                 </property>
+                 <property name="text">
+                  <string>Add</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="schemasGroupsHorizontalSpacer3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLineEdit" name="schemasGroupsManageGroupsEdit">
+               <property name="statusTip">
+                <string extracomment="Adds record to sm_apps.app_id"/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <layout class="QHBoxLayout" name="schemasGroupsHorizontalLayout2">
+               <item>
+                <widget class="QLabel" name="schemasGroupsCurrentSchemaLabel">
+                 <property name="font">
+                  <font>
+                   <underline>true</underline>
+                  </font>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>ForbiddenCursor</cursorShape>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 0, 0)</string>
+                 </property>
+                 <property name="text">
+                  <string>Current Schema</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="schemasGroupsCurrentSchemaEdit">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="toolTip">
+                  <string extracomment="Read from Global Variable appCURRSCHEMA"/>
+                 </property>
+                 <property name="statusTip">
+                  <string>Set under Configuration</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="schemasGroupsHorizontalSpacer2">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item row="3" column="1">
+              <widget class="QGroupBox" name="schemasGroupsFieldsGroupBox">
+               <property name="title">
+                <string>Group</string>
+               </property>
+               <layout class="QFormLayout" name="formLayout_2">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="schemasGroupsGroupNameLabel">
+                  <property name="text">
+                   <string>Group Name</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="schemasGroupsGroupNameEdit">
+                  <property name="statusTip">
+                   <string extracomment="app_name"/>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="schemasGroupsGroupDescrLabel">
+                  <property name="text">
+                   <string>Group Description</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="schemasGroupsGroupDescrEdit">
+                  <property name="statusTip">
+                   <string extracomment="app_desc"/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="schemasGroupsGroupTablePrefixLabel">
+                  <property name="text">
+                   <string>Group Table Prefix</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="schemasGroupsGroupTablePrefixEdit">
+                  <property name="statusTip">
+                   <string extracomment="app_tprf"/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="schemasGroupsGroupMenuNameLabel">
+                  <property name="text">
+                   <string>Group Menu Name</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLineEdit" name="schemasGroupsGroupMenuNameEdit">
+                  <property name="statusTip">
+                   <string extracomment="menu_name"/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <layout class="QHBoxLayout" name="schemasGroupsHorizontalLayout1">
+                  <item>
+                   <spacer name="schemasGroupsSpacer1">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="schemasGroupsResetButton">
+                    <property name="text">
+                     <string>Reset</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="schemasGroupsSaveButton">
+                    <property name="statusTip">
+                     <string extracomment="Save changes for the current Group"/>
+                    </property>
+                    <property name="text">
+                     <string>Save</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QListWidget" name="schemasGroupsGroupsList">
+               <property name="statusTip">
+                <string extracomment="List of all values in [sm_tblgrp].[tblgrp_name].  Right-Click provides option to delete - with Confirm Message Box."/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="manageTablesTab">
+          <attribute name="title">
+           <string>Table Info</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_18">
+           <item>
+            <widget class="QLabel" name="label_24">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Manage Existing Tables&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="manageTablesMainLayout" stretch="0,3">
+             <property name="sizeConstraint">
+              <enum>QLayout::SetDefaultConstraint</enum>
+             </property>
+             <item>
+              <layout class="QVBoxLayout" name="manageTablesLeftLayout">
+               <property name="sizeConstraint">
+                <enum>QLayout::SetMaximumSize</enum>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="manageTablesFilterLayout">
+                 <item>
+                  <widget class="QLineEdit" name="manageTablesFilterEdit">
+                   <property name="toolTip">
+                    <string extracomment="Table filter mask."/>
+                   </property>
+                   <property name="statusTip">
+                    <string extracomment="Wilcard-enabled filter.  The content of this should be used to filter the table list"/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="manageTablesFilterBtn">
+                   <property name="toolTip">
+                    <string extracomment="Filters tables in list below"/>
+                   </property>
+                   <property name="statusTip">
+                    <string extracomment="activates the filter search"/>
+                   </property>
+                   <property name="text">
+                    <string>Filter</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QListWidget" name="manageTablesListWidget">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string extracomment="List of ALL tables in current schema - may be filtered."/>
+                 </property>
+                 <property name="statusTip">
+                  <string extracomment="List of all tables from the current schema (appCURRSCHEMA).   Right-Click offers a DROP BOX option - with Confirm Message Box."/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QTableView" name="manageTablesTableView">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="statusTip">
+                <string extracomment="List of Tables managed by SpatMan. Data in this table is to be used by applications, reports and metadata"/>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="manageTablesButtonsLayout">
+             <item>
+              <spacer name="manageTablesButtonsSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="manageTablesResetBtn">
+               <property name="text">
+                <string>Reset</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="manageTablesSaveBtn">
+               <property name="statusTip">
+                <string extracomment="Save changes for the current Group"/>
+               </property>
+               <property name="text">
+                <string>Save</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_8">
+          <attribute name="title">
+           <string>Common Columns</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QLabel" name="availableServicesLabel_2">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Common Columns&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="ColumnsTableWidget" name="commonColumnsTable">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="commonColumnsButtonsLayout">
+             <item>
+              <spacer name="commonColumnsButtonsSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="commonColumnsResetBtn">
+               <property name="text">
+                <string>Reset</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="commonColumnsSaveBtn">
+               <property name="text">
+                <string>Save</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_3">
+          <attribute name="title">
+           <string>Columns</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_21">
+           <item>
+            <widget class="QLabel" name="label_85">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Table Columns&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,3">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_15">
+               <item>
+                <layout class="QHBoxLayout" name="schemaColumnsTableListFilterLayout">
+                 <item>
+                  <widget class="QLineEdit" name="schemaColumnsTableListFilterEdit">
+                   <property name="toolTip">
+                    <string extracomment="Table filter mask."/>
+                   </property>
+                   <property name="statusTip">
+                    <string extracomment="Wilcard-enabled filter.  The content of this should be used to filter the table list"/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="schemaColumnsTableListFilterBtn">
+                   <property name="toolTip">
+                    <string extracomment="Filters tables in list below"/>
+                   </property>
+                   <property name="statusTip">
+                    <string extracomment="activates the filter search"/>
+                   </property>
+                   <property name="text">
+                    <string>Filter</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QListWidget" name="schemaColumnsTableListWidget">
+                 <property name="statusTip">
+                  <string extracomment="The list of configured tables from [sm_tables]"/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="ColumnsTableWidget" name="schemaColumnsColumnTable">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="schemaColumnsButtonsLayout">
+             <item>
+              <spacer name="schemaColumnsButtonSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemaColumnsResetButton">
+               <property name="text">
+                <string>Reset</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemaColumnsSaveButton">
+               <property name="text">
+                <string>Save</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_2">
+          <attribute name="title">
+           <string>Create Tables</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_20">
+           <item>
+            <widget class="QGroupBox" name="schemaCreateTablesMainGroupBox">
+             <property name="title">
+              <string>Create New Tables</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_19">
+              <item>
+               <layout class="QGridLayout" name="schemaCreateTablesAttributesGridLayout" columnstretch="0,1,1,1,10">
+                <item row="5" column="2">
+                 <widget class="QLabel" name="schemaCreateTablesSpatialTypeLabel">
+                  <property name="text">
+                   <string>Spatial Type</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <layout class="QHBoxLayout" name="schemaCreateTablesIsSpatialLayout">
+                  <item>
+                   <widget class="QRadioButton" name="schemaCreateTablesIsSpatialYesBtn">
+                    <property name="text">
+                     <string>Yes</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QRadioButton" name="schemaCreateTablesIsSpatialNoBtn">
+                    <property name="text">
+                     <string>No</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="schemaCreateTablesIsSpatialSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::MinimumExpanding</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item row="5" column="3">
+                 <widget class="QComboBox" name="schemaCreateTablesSpatialTypeCombo">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>Text</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Point</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Line</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Polygon</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Raster</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Surface</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="schemaCreateTablessTableNameLabel">
+                  <property name="text">
+                   <string>Name</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QLabel" name="schemaCreateTablesSpatialLabel">
+                  <property name="text">
+                   <string>Is Spatial</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="schemaCreateTablesDescriptionLabel">
+                  <property name="text">
+                   <string>Description</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="schemaCreateTablesTitleLabel">
+                  <property name="text">
+                   <string>Title</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1" colspan="4">
+                 <widget class="QLineEdit" name="schemaCreateTablesTitleEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="statusTip">
+                   <string extracomment="The Official Metadata Title for the table.  Often the same as the Tablename."/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="3">
+                 <widget class="QComboBox" name="schemaCreateTablesGroupCombo">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="statusTip">
+                   <string extracomment="This dropdown lists the Available app_id (groups) from sm_apps"/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="schemaCreateTablesTableNameEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="statusTip">
+                   <string extracomment="A human friendly name for the table"/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1" colspan="4">
+                 <widget class="QTextEdit" name="schemaCreateTablesDescriptionEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="4">
+                 <spacer name="schemaCreateTablesIsSpacer1">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="0" column="2">
+                 <layout class="QHBoxLayout" name="schemaCreateTablesIsLayout1">
+                  <item>
+                   <spacer name="schemaCreateTablesIsLayout2">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="schemaCreateTablesGroupLabel">
+                    <property name="text">
+                     <string>Group</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="schemaCreateTablessTableRealNameLabel">
+                  <property name="text">
+                   <string>Real Name</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="schemaCreateTablesTableRealNameEdit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="schemaCreateTablesColumnsTableGroupBox">
+             <property name="title">
+              <string>Columns</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <property name="leftMargin">
+               <number>9</number>
+              </property>
+              <property name="topMargin">
+               <number>9</number>
+              </property>
+              <property name="rightMargin">
+               <number>9</number>
+              </property>
+              <property name="bottomMargin">
+               <number>9</number>
+              </property>
+              <item>
+               <widget class="ColumnsTableWidget" name="schemaCreateTablesColumnTable">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="schemaCreateTablesButtonLayout">
+             <item>
+              <spacer name="schemaCreateTablesButtonSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemaCreateTablesCreateButton">
+               <property name="text">
+                <string>Create</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_md">
+          <attribute name="title">
+           <string>Metadata</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_23">
+           <item>
+            <layout class="QHBoxLayout" name="schemasMetadataMainLayout">
+             <item>
+              <widget class="QListWidget" name="schemasMetadataTableList">
+               <property name="statusTip">
+                <string extracomment="Data from [md_resource]"/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="schemasMetadataMiddleLayout">
+               <item>
+                <widget class="QGroupBox" name="schemasMetadataResourceInformationGroup">
+                 <property name="title">
+                  <string>Resource Information</string>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_3">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="schemasMetadataTableNameLabel">
+                    <property name="text">
+                     <string>Table Name</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLineEdit" name="schemasMetadataTableNameEdit">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="schemasMetadataTitleLabel">
+                    <property name="text">
+                     <string>Title</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="schemasMetadataTitleEdit"/>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="schemasMetadataAlternativeTitleLabel">
+                    <property name="text">
+                     <string>Alternative Title</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="schemasMetadataAlternativeTitleEdit"/>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="schemasMetadataDescritpionLabel">
+                    <property name="text">
+                     <string>Description</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QLineEdit" name="schemasMetadataDescriptionEdit">
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="schemasMetadataAbstractLabel">
+                    <property name="text">
+                     <string>Abstract</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QTextEdit" name="schemasMetadataAbstractEdit"/>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="schemasMetadataThemeLabel">
+                    <property name="text">
+                     <string>Theme</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="schemasMetadataThemeCombo">
+                    <property name="editable">
+                     <bool>false</bool>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>farming</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>biota</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>boundaries</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>climatology / meteorology / atmosphere</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>economy</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>elevation</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>environment</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>geoscientific information</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>health</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>imagery / base maps / earth cover</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>intelligence / military</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>inland waters</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>location</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>oceans</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>planning / cadastre</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>society</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>transportation</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>utilities / communication</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="schemasMetadataHierarchyLabel">
+                    <property name="text">
+                     <string>Hierarchy</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="MappingComboBox" name="schemasMetadataHierarchyCombo">
+                    <property name="editable">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="schemasMetadataTemporalRangeGroup">
+                 <property name="title">
+                  <string>Temporal Range</string>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_8">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="schemasMetadataStartDateLabel">
+                    <property name="text">
+                     <string>Start Date</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QDateEdit" name="schemasMetadataStartDateEdit">
+                    <property name="calendarPopup">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="schemasMetadataEndDateLabel">
+                    <property name="text">
+                     <string>End Date</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QDateEdit" name="schemasMetadataEndDateEdit">
+                    <property name="calendarPopup">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="schemasMetadataUpdateLabel">
+                    <property name="text">
+                     <string>Updates</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="schemasMetadataUpdatesCombo">
+                    <property name="editable">
+                     <bool>false</bool>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>Repeatedly &amp; Frequently</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>As needed</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Daily</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Weekly</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Fortnightly</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Monthly</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Three Monthly</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Annually</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Irregularly</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Unknown</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Not Planned</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="schemasMetadataStatusLabel">
+                    <property name="text">
+                     <string>Status</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="schemasMetadataStatusCombo">
+                    <property name="editable">
+                     <bool>false</bool>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>completed</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>planned</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="schemasMetadataRightLayout">
+               <item>
+                <layout class="QHBoxLayout" name="schemasMetadataSelectContactLayout">
+                 <item>
+                  <widget class="QLabel" name="schemasMetadataSelectContactLabel">
+                   <property name="text">
+                    <string>Select Contact</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="MappingComboBox" name="schemasMetadataSelectContactCombo"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="schemasMetadataSpatialGroup">
+                 <property name="title">
+                  <string>Spatial</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_22">
+                  <item>
+                   <widget class="QGroupBox" name="schemasMetadataSpatialExtentsGroup">
+                    <property name="title">
+                     <string>Spatial Extents</string>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_6">
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>6</number>
+                     </property>
+                     <item>
+                      <layout class="QGridLayout" name="schemaPropertiesGridLayout2_2" rowstretch="0,0,0,0,0">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item row="1" column="1">
+                        <widget class="QLineEdit" name="schemasMetadataNorthEdit">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>10000</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="toolTip">
+                          <string extracomment="Data stored in sm_db_sett.  VALUES ('D','NORTHEXTENTS','The Northern Extents','The Northern Extents in default SRID coordinates.')"/>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="2">
+                        <widget class="QLabel" name="schemaPropertiesEastLabel_2">
+                         <property name="text">
+                          <string>East</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
+                        <widget class="QLineEdit" name="schemasMetadataWestEdit">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>100000</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="toolTip">
+                          <string extracomment="Data stored in sm_db_sett.  VALUES ('D','WESTEXTENTS','The Western Extents','The Western Extents in default SRID coordinates.')"/>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="4" column="1">
+                        <widget class="QLabel" name="schemaPropertiesSouthLabel_2">
+                         <property name="text">
+                          <string>South</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QLabel" name="schemaPropertiesNorthLabel_2">
+                         <property name="text">
+                          <string>North</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="2">
+                        <widget class="QLineEdit" name="schemasMetadataEastEdit">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>10000</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="toolTip">
+                          <string extracomment="Data stored in sm_db_sett.  VALUES ('D','EASTEXTENTS','The Eastern Extents','The Eastern Extents in default SRID coordinates.')"/>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="1">
+                        <widget class="QLineEdit" name="schemasMetadataSouthEdit">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>10000</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="toolTip">
+                          <string extracomment="Data stored in sm_db_sett.  VALUES ('D','SOUTHEXTENTS','The Southern Extents','The Southern Extents in default SRID coordinates.')"/>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QLabel" name="schemaPropertiesWestLabel_2">
+                         <property name="text">
+                          <string>West</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_5">
+                       <item>
+                        <widget class="QPushButton" name="schemasMetadataCalculateExtentsButton">
+                         <property name="text">
+                          <string>Calculate</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="schemasMetadataFromSchemaPropertiesButton">
+                         <property name="text">
+                          <string>From Schema Properties</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QFormLayout" name="schemasMetadataDatePrecisionLayout">
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="schemasMetadataDataTypeLabel">
+                      <property name="text">
+                       <string>Data Type</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QComboBox" name="schemasMetadataDataTypeCombo">
+                      <property name="editable">
+                       <bool>false</bool>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>vector</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>grid</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QLabel" name="schemasMetadataPrecisionResolutionLabel">
+                      <property name="text">
+                       <string>Precision / Resolution</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="1">
+                     <widget class="QLineEdit" name="schemasMetadataPrecisionResolutionEdit"/>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="schemasMetadataLineageGroup">
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                   <pointsize>10</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="autoFillBackground">
+                  <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="title">
+                  <string>Lineage</string>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_6">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="schemasMetadataStatementLabel">
+                    <property name="font">
+                     <font>
+                      <family>Arial</family>
+                      <pointsize>10</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Statement</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QTextEdit" name="schemasMetadataStatementEdit"/>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="schemasMetadataMaintainLabel">
+                    <property name="text">
+                     <string>Maintain</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <layout class="QHBoxLayout" name="schemasMetadataLinageRadioLayout">
+                    <item>
+                     <widget class="QRadioButton" name="schemasMetadataAllRadio">
+                      <property name="text">
+                       <string>All</string>
+                      </property>
+                      <property name="checked">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QRadioButton" name="schemasMetadataGeomRadio">
+                      <property name="text">
+                       <string>Geom</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QRadioButton" name="schemasMetadataAttrRadio">
+                      <property name="text">
+                       <string>Attr</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="schemasMetadataDateStampLayout">
+                 <item>
+                  <widget class="QLabel" name="schemasMetadataUpdateDateStampLabel">
+                   <property name="text">
+                    <string>Next Update Scheduled</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDateEdit" name="schemasMetadataUdpateDateStampEdit">
+                   <property name="autoFillBackground">
+                    <bool>true</bool>
+                   </property>
+                   <property name="calendarPopup">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="groupBox">
+                 <property name="title">
+                  <string/>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_3">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="schemasMetadataKeywordsLabel">
+                    <property name="text">
+                     <string>Keywords</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="schemasMetadataURLLabel">
+                    <property name="text">
+                     <string>Online URL</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLineEdit" name="schemasMetadataKeywordsEdit"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="schemasMetadataURLEdit"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="schemasMetadataBtnsLayout">
+             <item>
+              <spacer name="schemasMetadataBtnSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="schemasMetadataOrphansState">
+               <property name="text">
+                <string>Orphans</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemasMetadataDeleteBtn">
+               <property name="text">
+                <string>Delete</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemasMetadataReassignBtn">
+               <property name="text">
+                <string>Reassign</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemasMetadataSaveBtn">
+               <property name="text">
+                <string>Save</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemasMetadataXMLOutBtn">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>XML Out</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemasMetadataResetBtn">
+               <property name="text">
+                <string>Reset</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_dpol">
+          <attribute name="title">
+           <string>Data Policy</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_25">
+           <item>
+            <layout class="QHBoxLayout" name="schemasDataPolicyMainLayout">
+             <item>
+              <widget class="QListWidget" name="schemasDataPolicyTableList">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>250</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="schemasDataPolicyMiddleLayout">
+               <item>
+                <widget class="QGroupBox" name="schemasDataPolicyTableUsageGroup">
+                 <property name="title">
+                  <string>Table Usage Policy</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_27">
+                  <item>
+                   <widget class="QLabel" name="schemasDataPolicyDataAccessLabel">
+                    <property name="text">
+                     <string>Data Access</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="schemasDataPolicyDataAccessEdit"/>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="schemasDataPolicyCopyRightLabel">
+                    <property name="text">
+                     <string>Copyright</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="schemasDataPolicyCopyrightEdit"/>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="schemasDataPolicyUseRightLabel">
+                    <property name="text">
+                     <string>Use rights</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="schemasDataPolicyUseRightEdit"/>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="schemasDataPolicyCopyFromGlobalLayout">
+                    <item>
+                     <spacer name="schemasDataPolicyCopyFromGlobalSpacer">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="schemasDataPolicyCopyFromGlobalButton">
+                      <property name="text">
+                       <string>Copy from Global Properties</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="schemasDataPolicyClassificationLabel">
+                    <property name="text">
+                     <string>Classification</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="schemasDataPolicyClassificationCombo">
+                    <property name="editable">
+                     <bool>false</bool>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>Unclassified</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Restricted</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Confidential</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Secret</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Top Secret</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <spacer name="schemasDataPolicyMiddleSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="schemasDataPolicyRightLayout">
+               <item>
+                <widget class="ReferenceDateEdit" name="schemaDatePolicyreferenceDateEdit" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>100</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="schemasDataPolicyRightSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="schemasDataPolicyButtonsLayout">
+             <item>
+              <spacer name="schemasDataPolicyButtonsSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="schemasDataPolicyOrphansState">
+               <property name="text">
+                <string>Orphans</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemasDataPolicyDeleteButton">
+               <property name="text">
+                <string>Delete</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemasDataPolicyReassignButton">
+               <property name="text">
+                <string>Reassign</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemasDataPolicySaveButton">
+               <property name="text">
+                <string>Save</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemasDataPolicyXMLOutButton">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>XML Out</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="schemasDataPolicyResetButton">
+               <property name="text">
+                <string>Reset</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage2">
+      <attribute name="title">
+       <string>Audits</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_14">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>151</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Schema</string>
+       </property>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>131</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string extracomment="Read a new schema , loading it into the database."/>
+        </property>
+        <property name="text">
+         <string>Schema Read Load</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>131</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string extracomment="Run a series of tests to audit the schema in terms of, metadata, lineage, geometries, indexes, etc."/>
+        </property>
+        <property name="text">
+         <string>Schema Audit</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_15">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>100</y>
+         <width>151</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Geometries</string>
+       </property>
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>220</y>
+          <width>131</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Validate</string>
+        </property>
+       </widget>
+       <widget class="QListView" name="listView_6">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>131</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_17">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>100</y>
+         <width>151</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Networks</string>
+       </property>
+       <widget class="QPushButton" name="pushButton_15">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>220</y>
+          <width>131</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Validate</string>
+        </property>
+       </widget>
+       <widget class="QListView" name="listView_8">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>131</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_16">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>100</y>
+         <width>151</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Relations</string>
+       </property>
+       <widget class="QPushButton" name="pushButton_14">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>220</y>
+          <width>131</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Validate</string>
+        </property>
+       </widget>
+       <widget class="QListView" name="listView_7">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>131</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_19">
+       <property name="geometry">
+        <rect>
+         <x>490</x>
+         <y>100</y>
+         <width>151</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Table Analysis</string>
+       </property>
+       <widget class="QPushButton" name="pushButton_16">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>220</y>
+          <width>131</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Validate</string>
+        </property>
+       </widget>
+       <widget class="QListView" name="listView_9">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>131</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label_60">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>420</y>
+         <width>151</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>28</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>Phase 2</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="exchangeWidget">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <attribute name="title">
+       <string>Exchange</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_19">
+       <item>
+        <widget class="QTabWidget" name="exchangeNestedTabs">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="ExportImport">
+          <property name="accessibleName">
+           <string>Import/Export</string>
+          </property>
+          <attribute name="title">
+           <string>Import/Export</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QGroupBox" name="exchangeExportGroupBox">
+             <property name="title">
+              <string>Export</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_26">
+              <item>
+               <layout class="QHBoxLayout" name="exchangeExportFilterLayout">
+                <item>
+                 <widget class="QLineEdit" name="exchangeExportFilterEdit">
+                  <property name="toolTip">
+                   <string extracomment="Table filter mask."/>
+                  </property>
+                  <property name="statusTip">
+                   <string extracomment="Wilcard-enabled filter.  The content of this should be used to filter the table list"/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="exchangeExportfilterBtn">
+                  <property name="toolTip">
+                   <string extracomment="Filters tables in list below"/>
+                  </property>
+                  <property name="statusTip">
+                   <string extracomment="activates the filter search"/>
+                  </property>
+                  <property name="text">
+                   <string>Filter</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QListWidget" name="exchangeExportList">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="statusTip">
+                 <string extracomment="List of tables in [sm_tables]"/>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="exchangeExportCombo">
+                <item>
+                 <property name="text">
+                  <string>SHP</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>TAB / DAT</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>GPX</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>GeoJSON</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>KML</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>SVG</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>CSV</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>SQLite</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>SQL4postgres</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>SQL4oracle</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>SQL4MSSQL</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="exchangeExportDirLabel">
+                <property name="text">
+                 <string>Export to directory:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="exchangeExportDirLayout">
+                <item>
+                 <widget class="QLineEdit" name="exchangeExportDir">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="exchangeExportDirBrowseBtn">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>30</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>...</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLabel" name="exchangeExportFileLabel">
+                <property name="text">
+                 <string>Export file name:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="exchangeExportFile"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="exchangeExportSwitcheLabel">
+                <property name="text">
+                 <string>Switches:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="exchangeExportSwitches">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="placeholderText">
+                 <string>ogr2ogr switches e.g. -gt</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="exchangeExportCmdLabel">
+                <property name="text">
+                 <string>Command:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPlainTextEdit" name="exchangeExportCmdEdit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="exchangeExportGoButtonLayout">
+                <item>
+                 <spacer name="exchangeExportGoButtonSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="exchangeExportGoButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>Export</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="exchangeImportsGroupBox">
+             <property name="title">
+              <string>Import</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_29">
+              <item>
+               <widget class="QLabel" name="exchangeImportsSelectFileLabel">
+                <property name="text">
+                 <string>File:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="exchangeImportsSelectFileLayout">
+                <item>
+                 <widget class="QLineEdit" name="exchangeImportsSelectFileEdit">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="exchangeImportsSelectFileBrowse">
+                  <property name="maximumSize">
+                   <size>
+                    <width>30</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="whatsThis">
+                   <string extracomment="This should bring up a file load dialogue.  Legal file types are those that are valid inputs for ogr2ogr.  GDAL ogr2ogr will be used to import data into the database."/>
+                  </property>
+                  <property name="text">
+                   <string>...</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="exchangeImportsExistingTableRadioBtn">
+                <property name="text">
+                 <string>Into existing table</string>
+                </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">buttonGroup</string>
+                </attribute>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="exchangeImportsExistingTableCombo"/>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="exchangeImportsNewTableRadioBtn">
+                <property name="text">
+                 <string>Create new table</string>
+                </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">buttonGroup</string>
+                </attribute>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="exchangeImportsImportToEdit">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="exchangeImportsUsePrefix">
+                <property name="text">
+                 <string>Use Prefix</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="exchangeImportsRealNameEdit">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="exchangeImportsFieldDelimiterLabel">
+                <property name="text">
+                 <string>Field Delimiter</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="exchangeImportsFieldDelimiterEdit">
+                <property name="text">
+                 <string>,</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="exchangeImportsTextDelimiterLabel">
+                <property name="text">
+                 <string>Text Delimiter</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="exchangeImportsTextDelimiterEdit">
+                <property name="text">
+                 <string>&quot;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="exchangeImportSwitcheLabel">
+                <property name="text">
+                 <string>Switches:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="exchangeImportSwitches">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="placeholderText">
+                 <string>ogr2ogr switches e.g. -gt</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="exchangeImportCmdLabel">
+                <property name="text">
+                 <string>Command:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPlainTextEdit" name="exchangeImportCmdEdit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="exchangeImportsGoLayout">
+                <item>
+                 <spacer name="exchangeImportsGoSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="exchangeImportsgoButton">
+                  <property name="text">
+                   <string>Import</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <spacer name="exchangeImportsVerticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>467</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="exchangeSetupWevServicesGroupBox">
+             <property name="title">
+              <string>Setup Web Services</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_30">
+              <item>
+               <widget class="QListView" name="exchangeSetupWebServicesList"/>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="exchangeSetupWebServicesGoButtonLayout">
+                <item>
+                 <spacer name="exchangeSetupWebServicesGoButtonSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="exchangeSetupWebServicesGoButton">
+                  <property name="text">
+                   <string>Go</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <spacer name="exchangeSetupWebServicesVerticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>347</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_9">
+          <attribute name="title">
+           <string>Validate</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <item>
+            <widget class="QGroupBox" name="exchangeValidateGroupBox">
+             <property name="title">
+              <string>Validate</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_28">
+              <item>
+               <widget class="TableWidget" name="exchangeValidateInputTable">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="exchangeValidateGoButtonLayout">
+                <item>
+                 <spacer name="exchangeValidateGoButtonSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="exchangeValidateGoButton">
+                  <property name="text">
+                   <string>Run</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="TableWidget" name="exchangeValidateResultTable">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>250</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="exchangeValidateReportButtonLayout">
+                <item>
+                 <spacer name="exchangeValidateButtonSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="exchangeValidateReportButton">
+                  <property name="text">
+                   <string>Report</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabWidgetPage4">
+      <attribute name="title">
+       <string>Relationships</string>
+      </attribute>
+      <widget class="QTableWidget" name="tableWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>711</width>
+         <height>192</height>
+        </rect>
+       </property>
+       <property name="statusTip">
+        <string extracomment="Data stored in [sm_join]  Right-Click provide option to  delete - with Confirm Message Box."/>
+       </property>
+       <column>
+        <property name="text">
+         <string>New Column</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>FromTable</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>FromColumn</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>ToTable</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>JoinType</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_23">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>250</y>
+         <width>481</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Add a Relation</string>
+       </property>
+       <widget class="QLabel" name="label_26">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>From Table</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_16">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>30</y>
+          <width>150</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_17">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>60</y>
+          <width>150</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_78">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>From Column</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_18">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>90</y>
+          <width>150</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_79">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>90</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>To Table</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_19">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>120</y>
+          <width>150</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_80">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>120</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>To Column</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_21">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>150</y>
+          <width>121</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="statusTip">
+         <string extracomment="This button must be greyed out until validation is passed."/>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_81">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>150</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Type</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_20">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>150</y>
+          <width>150</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_35">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>120</y>
+          <width>121</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="statusTip">
+         <string extracomment="Run a count based on join.  If record count on both tables are not null AND the join count is zero, prompt for error, but accept yes.  If join count is more than sum of records in both tables, we have a potential Cartesian Product.  Prompt the user to reconsider as this may impact performance."/>
+        </property>
+        <property name="text">
+         <string>Validate</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="configuration">
+      <attribute name="title">
+       <string>Configuration</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_13">
+       <item>
+        <layout class="QHBoxLayout" name="connLabelLayout">
+         <item>
+          <widget class="QLabel" name="databaseConnectionsLabel">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Database Connections&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="connLabelSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="connGridLayout" columnstretch="1,2">
+         <item row="0" column="0">
+          <widget class="QLineEdit" name="addConnectionEdit"/>
+         </item>
+         <item row="0" column="1">
+          <layout class="QHBoxLayout" name="connAddLayout">
+           <item>
+            <widget class="QPushButton" name="addConnectionButton">
+             <property name="text">
+              <string>Add</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="connAddBtnSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <widget class="QFrame" name="connectionsFrame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_12">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QListWidget" name="connectionListWidget">
+              <property name="statusTip">
+               <string extracomment="List of Connections from [sm_conns].  Right-Click provide option to  delete - with Confirm Message Box."/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="setCurrentSchemaLayout">
+              <item>
+               <widget class="QPushButton" name="setCurrentSchemaButton">
+                <property name="toolTip">
+                 <string extracomment="Sets Global Variable appCURRSCHEMA"/>
+                </property>
+                <property name="statusTip">
+                 <string extracomment="Sets Global Variable app CURRSCHEMA">Set Current Schema</string>
+                </property>
+                <property name="text">
+                 <string>Set Current Schema</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="setCurrentSchemaSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <layout class="QVBoxLayout" name="connInfoAndButtonsLayout">
+           <item>
+            <widget class="QGroupBox" name="connectionInfoGroupBox">
+             <property name="title">
+              <string>Connection</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item>
+               <layout class="QGridLayout" name="connInfoLayout">
+                <item row="0" column="1">
+                 <widget class="QComboBox" name="connActiveCombo">
+                  <property name="toolTip">
+                   <string extracomment="The first value must be [Create New] other values are saved connections"/>
+                  </property>
+                  <property name="statusTip">
+                   <string extracomment="[sm_conns].[conns_active]. Drop-Down containing 'Yes', 'No', 'Offline'."/>
+                  </property>
+                  <property name="editable">
+                   <bool>false</bool>
+                  </property>
+                  <property name="currentText">
+                   <string>Yes</string>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>Yes</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>No</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="connActiveLabel">
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Active Connection</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="connDbTypeLabel">
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Db Type</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QComboBox" name="connDbTypeCombo">
+                  <property name="toolTip">
+                   <string extracomment="Oracle, PostgreSQL, SQLite, MySQL, MS SQL"/>
+                  </property>
+                  <property name="statusTip">
+                   <string extracomment="[sm_conns].[conns_active]. Drop-Down containing 'Oracle', 'PostgreSQL', 'MySQL', 'MS SQL'."/>
+                  </property>
+                  <property name="editable">
+                   <bool>false</bool>
+                  </property>
+                  <property name="currentText">
+                   <string>Oracle</string>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>Oracle</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>PostgreSQL</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>MySQL</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>MS SQL</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLineEdit" name="connDatabaseEdit">
+                  <property name="statusTip">
+                   <string extracomment="[sm_conns].[conns_dbname]."/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="connHostLabel">
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Server / Host</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="connHostEdit">
+                  <property name="statusTip">
+                   <string extracomment="[sm_conns].[conns_dbhost]."/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="connDatabaseLabel">
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Database</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QLabel" name="connUserLabel">
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>User</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLineEdit" name="connUserEdit">
+                  <property name="statusTip">
+                   <string extracomment="[sm_conns].[conns_dbuser]."/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QLabel" name="connPasswordLabel">
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Password</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QLabel" name="connSchemaLabel">
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Schema</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QLineEdit" name="connSchemaEdit">
+                  <property name="statusTip">
+                   <string extracomment="[sm_conns].[conns_dbschema]."/>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QLineEdit" name="connPasswordEdit">
+                  <property name="statusTip">
+                   <string extracomment="[sm_conns].[conns_dbpwd]."/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QCheckBox" name="connPortCheckBox">
+                  <property name="text">
+                   <string>Port</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QSpinBox" name="connPortEdit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="maximum">
+                   <number>65536</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+             <zorder></zorder>
+            </widget>
+           </item>
+           <item>
+            <spacer name="connSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="connButtonsLayout">
+             <item>
+              <spacer name="connButtonsSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="connResetButton">
+               <property name="text">
+                <string>Reset</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="connSaveButton">
+               <property name="text">
+                <string>Save</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="connTestButton">
+               <property name="text">
+                <string>Test</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_7">
+      <attribute name="title">
+       <string>Contacts</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_10">
+       <item>
+        <widget class="QLabel" name="contactsTabLabel">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Contacts for Metadata&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="contactsGridLayout" columnstretch="1,2">
+         <item row="0" column="0">
+          <layout class="QHBoxLayout" name="contactsNameLayout">
+           <item>
+            <widget class="QLineEdit" name="addContactLineEdit">
+             <property name="statusTip">
+              <string extracomment="Name of the new Contact."/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="addContactSurnameLineEdit"/>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="addContactButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="statusTip">
+            <string extracomment="Once added, the contact is highlighted so that further details can be edited."/>
+           </property>
+           <property name="text">
+            <string>Add</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QGroupBox" name="contactGroupBox">
+           <property name="title">
+            <string>Contact</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <layout class="QGridLayout" name="contactInfoLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="contactNameLabel">
+                <property name="text">
+                 <string>Name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="contactNameEdit">
+                <property name="statusTip">
+                 <string extracomment="Details of Contacts from [md_contact]. [cntct_name]"/>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="contactSurnameLabel">
+                <property name="text">
+                 <string>Surame</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="contactSurnameEdit">
+                <property name="statusTip">
+                 <string extracomment="Details of Contacts from [md_contact]. [cntct_surname]"/>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="contactDepartmentLabel">
+                <property name="text">
+                 <string>Department</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="contactDepartmentEdit">
+                <property name="statusTip">
+                 <string extracomment="Details of Contacts from [md_contact]. [cntct_dpt]"/>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="contactPositionLabel">
+                <property name="text">
+                 <string>Position</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLineEdit" name="contactPositionEdit">
+                <property name="statusTip">
+                 <string extracomment="Details of Contacts from [md_contact]. [cntct_pos]"/>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="contactRoleLabel">
+                <property name="text">
+                 <string>Role</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLineEdit" name="contactRoleEdit">
+                <property name="statusTip">
+                 <string extracomment="Details of Contacts from [md_contact]. [cntct_role]"/>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <layout class="QHBoxLayout" name="contactButtonsLayout">
+                <item>
+                 <spacer name="contactButtonsSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="contactResetButton">
+                  <property name="text">
+                   <string>Reset</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="contactSaveButton">
+                  <property name="text">
+                   <string>Save</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="contactAddressLayout">
+              <item>
+               <widget class="TableWidget" name="contactAddressTable">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="contactAddressButtonsLayout">
+                <item>
+                 <spacer name="contactAddressButtonsSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="contactAddressTableResetButton">
+                  <property name="text">
+                   <string>Reset</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="contactAddressTableSaveButton">
+                  <property name="text">
+                   <string>Save</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QListWidget" name="contactListWidget">
+           <property name="statusTip">
+            <string extracomment="List of Contacts from [md_contact].  Right-Click provide option to  delete - with Confirm Message Box."/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Users</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_9">
+       <item>
+        <widget class="QLabel" name="usersTabLabel">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Authorised Application Users&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="usersMainLayout" columnstretch="1,2">
+         <item row="0" column="0">
+          <widget class="QLineEdit" name="addUserLineEdit">
+           <property name="statusTip">
+            <string extracomment="Name of the new User."/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="addUserButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="statusTip">
+            <string extracomment="Once added, the contact is highlighted so that further details can be edited."/>
+           </property>
+           <property name="text">
+            <string>Add</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QListWidget" name="userListWidget">
+           <property name="statusTip">
+            <string extracomment="List of Users from [sm_auth_user]. Right-Click provide option to  delete - with Confirm Message Box."/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QGroupBox" name="userGroupBox">
+           <property name="title">
+            <string>Contact</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="nameLabel">
+                <property name="text">
+                 <string>Name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="passwordLabel">
+                <property name="text">
+                 <string>Password</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="passwordEdit">
+                <property name="statusTip">
+                 <string extracomment="Data in [sm_auth_user].[user_password] This must be encrypted with SHA256, and salted with GNC_ENC_SALT"/>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="isAdminLabel">
+                <property name="text">
+                 <string>Is Administrator</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QCheckBox" name="isAdminCheckBox">
+                <property name="statusTip">
+                 <string extracomment="Data in [sm_auth_user].[isadmin].  At this point all functionality requires Admin rights."/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="userNameEdit">
+                <property name="statusTip">
+                 <string extracomment="Data in [sm_auth_user].[user_name]"/>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <layout class="QHBoxLayout" name="usersButtonLayout">
+                <item>
+                 <widget class="QPushButton" name="resetUserButton">
+                  <property name="text">
+                   <string>Reset</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="saveUserButton">
+                  <property name="text">
+                   <string>Save</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="usersButtonSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="usersVerticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>Web Services</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="availableServicesLabel">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Available Services&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="TableWidget" name="availableServicesTable">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="availableServicesResetBtn">
+           <property name="text">
+            <string>Reset</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="availableServicesSaveBtn">
+           <property name="text">
+            <string>Save</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>General</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0" rowspan="2">
+        <widget class="QGroupBox" name="generalSettingsGroupBox">
+         <property name="title">
+          <string>General Settings</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <layout class="QGridLayout" name="generalSettingsLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="orgNameLabel">
+              <property name="text">
+               <string>Organisation Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="orgNameEdit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'ORGNAME'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="phoneNumberLabel">
+              <property name="text">
+               <string>Phone Number</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="phoneNumberEdit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'ORGPHONE'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="postalCodeLabel">
+              <property name="text">
+               <string>Postal Code</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="emailLabel">
+              <property name="text">
+               <string>General Email</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="mainAddress1Edit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'ORGADD1'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="mainAddress2Edit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'ORGADD2'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="postalCodeEdit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'ORGPCODE'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="mainAddress1Label">
+              <property name="text">
+               <string>Main Address 1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="emailEdit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'ORGEMAIL'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="mainAddress2Label">
+              <property name="text">
+               <string>Main Address 2</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="mainAddress3Label">
+              <property name="text">
+               <string>Main Address 3</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="mainAddress3Edit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'ORGADD3'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <spacer name="generalSettingsSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>0</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="generalSettingsBtnLayout">
+            <item>
+             <spacer name="saveGeneralSettingsBtnHorizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="resetGeneralSettingsBtn">
+              <property name="text">
+               <string>Reset</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="saveGeneralSettingsBtn">
+              <property name="text">
+               <string>Save</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="globalNamingConvGroupBox">
+         <property name="title">
+          <string>Global Naming Conventions</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QGridLayout" name="globalNamingConvLayout">
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="spatialTablePrefixEdit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'GNC_SPTAB_PREFIX'.  The [sm_description] = 'Spatial Table Prefix'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="nonSpatialTablePrefixEdit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'GNC_NSPTAB_PREFIX'.  The [sm_description] = 'Non-Spatial Table Prefix'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="nonSpatialTablePrefixLabel">
+              <property name="text">
+               <string>Non-Spatial Table Prefix</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="spatialTablePrefixLabel">
+              <property name="text">
+               <string>Spatial Table Prefix</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="systemTablePrefixLabel">
+              <property name="text">
+               <string>System Table Prefix</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="linkTablePrefixLabel">
+              <property name="text">
+               <string>Link Table Prefix</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="systemTablePrefixEdit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'GNC_SYSTAB_PREFIX'.  The [sm_description] = 'System Table Prefix'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="lookupTablePrefixLabel">
+              <property name="text">
+               <string>Lookup Table Prefix</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="lookupTablePrefixEdit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'GNC_LUTAB_PREFIX'.  The [sm_description] = 'Lookup Table Prefix'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLineEdit" name="linkTablePrefixEdit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'GNC_LNKTAB_PREFIX'.  The [sm_description] = 'Link Table Prefix'.  The [sm_variable] is the user input."/>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QLabel" name="geometryColumnNameLabel">
+              <property name="text">
+               <string>Geometry Column Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <widget class="QLineEdit" name="uidColumnNameEdit"/>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="uidColumnNameLabel">
+              <property name="text">
+               <string>Unique ID Column Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="0">
+             <widget class="QLabel" name="rasterColumnNameLabel">
+              <property name="text">
+               <string>Raster Column Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="1">
+             <widget class="QLineEdit" name="geometryColumnNameEdit"/>
+            </item>
+            <item row="11" column="1">
+             <widget class="QLineEdit" name="rasterColumnNameEdit"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="resetGlobalNamingConvButton">
+              <property name="text">
+               <string>Reset</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="saveGlobalNamingConvButton">
+              <property name="text">
+               <string>Save</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1" rowspan="2">
+        <widget class="QGroupBox" name="globalTableUsagePolicyGroupBox">
+         <property name="title">
+          <string>Global Table Usage Policy</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <layout class="QVBoxLayout" name="globalTableUsagePolicyVLayout">
+            <item>
+             <widget class="QLabel" name="dataAccessPolicyLabel">
+              <property name="text">
+               <string>Data Access</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPlainTextEdit" name="dataAccessPolicyEdit"/>
+            </item>
+            <item>
+             <spacer name="tableUsagePolicySpacer2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>6</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="copyrightLabel">
+              <property name="text">
+               <string>Copyright</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPlainTextEdit" name="copyrightEdit"/>
+            </item>
+            <item>
+             <spacer name="tableUsagePolicySpacer1">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>6</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="userRightLabel">
+              <property name="text">
+               <string>Use rights</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPlainTextEdit" name="userRightEdit"/>
+            </item>
+            <item>
+             <spacer name="tableUsagePolicySpacer3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>6</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="classificationLabel">
+              <property name="text">
+               <string>Classification</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="classificationCombo">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'USE_POL_CLASS'.  The [sm_description] = 'General Data Classification'.  The [sm_variable] is the user input."/>
+              </property>
+              <property name="editable">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>Unclassified</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Restricted</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Confidential</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Secret</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Top Secret</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="globalTableUsagePolicyButtonLayout">
+              <item>
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="resetGlobalTableUsagePolicyButton">
+                <property name="text">
+                 <string>Reset</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="saveGlobalTableUsagePolicyButton">
+                <property name="text">
+                 <string>Save</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QGroupBox" name="otherGeneralGroupBox">
+         <property name="title">
+          <string>Other</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QFormLayout" name="formLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="encryptionSaltLabel">
+              <property name="text">
+               <string>Encryption salt</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="encryptionSaltEdit">
+              <property name="statusTip">
+               <string extracomment="Data is stored in [sm_db_sett]. The [sm_type] = 'T'.  The [sm_variable] = 'GNC_ENC_SALT'.  The [sm_description] = 'Encryption Salt'.  The [sm_variable] is read-only, and can only be set via SQL.  Should only be set at the beginning of a project, else passwords become unusable."/>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QPlainTextEdit" name="notesEdit"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="notesLabel">
+              <property name="text">
+               <string>Notes</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="otherGeneralLayout">
+            <item>
+             <spacer name="otherGeneralSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="resetOtherGeneralBtn">
+              <property name="text">
+               <string>Reset</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="saveOtherGeneralBtn">
+              <property name="text">
+               <string>Save</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <spacer name="mainSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="dialogBottonHorizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="value">
+        <number>24</number>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="textVisible">
+        <bool>true</bool>
+       </property>
+       <property name="invertedAppearance">
+        <bool>false</bool>
+       </property>
+       <property name="format">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="quitButton">
+       <property name="toolTip">
+        <string extracomment="Quit the program"/>
+       </property>
+       <property name="text">
+        <string>Quit</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TableWidget</class>
+   <extends>QFrame</extends>
+   <header location="global">TableWidget</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MappingComboBox</class>
+   <extends>QComboBox</extends>
+   <header>MappingCombobox</header>
+  </customwidget>
+  <customwidget>
+   <class>ColumnsTableWidget</class>
+   <extends>QFrame</extends>
+   <header>ColumnsTableWidget</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ReferenceDateEdit</class>
+   <extends>QWidget</extends>
+   <header>ReferenceDateEdit</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>
