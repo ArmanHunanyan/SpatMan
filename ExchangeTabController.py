@@ -40,7 +40,11 @@ import subprocess
 def parseGML(gxml):
     gxml = str(gxml)
     gxml = "<root xmlns:gml = \"gml\" >" + gxml + "</root>"
-    root = et.fromstring(gxml)
+    try:
+        root = et.fromstring(gxml)
+    except Exception as e:
+        print("Wrong GML %s: %s" % (str(e), gxml))
+        return None
 
     id = root.findall("./{gml}GeographicCRS/{gml}srsID/{gml}name")
     if len(id) == 0:
