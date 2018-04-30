@@ -23,6 +23,7 @@ class Configuration:
         self.m_ogr2ogrFormats = []
         self.m_lastExportDir = ""
         self.m_reportTemplateDir = ""
+        self.m_gdalDataDir = ""
 
         cfg_path = self.configFile()
         print("Loading configuration from '%s'" % cfg_path)
@@ -53,6 +54,8 @@ class Configuration:
                 self.m_reportTemplateDir = config['DEFAULT']['REPORT_TEMPLATE_DIR']
             if 'LAST_EXPORT_DIR' in config['DEFAULT']:
                 self.m_lastExportDir = config['DEFAULT']['LAST_EXPORT_DIR']
+            if 'GDAL_DATA_DIR' in config['DEFAULT']:
+                self.m_gdalDataDir = config['DEFAULT']['GDAL_DATA_DIR']
 
     def save(self):
         cfg_path = self.configFile()
@@ -72,6 +75,7 @@ class Configuration:
         config['DEFAULT']['OGR2OGR_FMTS'] = '+'.join([','.join(rec) for rec in self.m_ogr2ogrFormats])
         config['DEFAULT']['REPORT_TEMPLATE_DIR'] = self.m_reportTemplateDir
         config['DEFAULT']['LAST_EXPORT_DIR'] = self.m_lastExportDir
+        config['DEFAULT']['GDAL_DATA_DIR'] = self.m_gdalDataDir
 
         with open(cfg_path, 'w') as configfile:
             config.write(configfile)
@@ -121,6 +125,9 @@ class Configuration:
     def userNamePass(self):
         return (self.m_usernameToSave, self.m_passwdToSave)
 
+    def gdalDataDir(self):
+        return self.m_gdalDataDir
+
     def setOgr2ogrDir(self, dir):
         self.m_ogr2ogrDir = dir
         self.save()
@@ -135,3 +142,7 @@ class Configuration:
 
     def reportTemplateDir(self):
         return self.m_reportTemplateDir
+
+    def setGdalDataDir(self, dir):
+        self.m_gdalDataDir = dir
+        self.save()

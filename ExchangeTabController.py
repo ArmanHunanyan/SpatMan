@@ -427,7 +427,7 @@ class ExchangeTabValidateController(QObject):
         config = Configuration()
         self.m_ogr2ogrExec = os.path.join(config.ogr2ogrDir(), "ogr2ogr.exe")
         self.m_gdalsrsinfoExec = os.path.join(config.ogr2ogrDir(), "gdalsrsinfo.exe")
-        self.m_gdalData = os.path.join(config.ogr2ogrDir(), "..", "share", "epsg_csv")
+        self.m_gdalData = config.gdalDataDir()
 
         self.m_pdfConverters = list()
 

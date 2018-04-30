@@ -52,6 +52,7 @@ class MainWindow(QDialog):
                 QMessageBox.information(self, "Schema error", "Failed to load schema '%s'" % config.currentSchema())
                 self.ui.mainTabWidget.setCurrentWidget(self.ui.configuration)
 
+        # Checking if ogr2ogr dir is specifyed
         ogr2ogrDir = config.ogr2ogrDir()
         if ogr2ogrDir is None or ogr2ogrDir == "":
             ogr2ogrDir = "C:\\OSGeo4W64\\bin"
@@ -67,6 +68,20 @@ class MainWindow(QDialog):
                     config.setOgr2ogrDir(path)
             else:
                 config.setOgr2ogrDir(None)
+
+        # Checking if gdal data dir is specifyed
+        gdalData = config.gdalDataDir()
+        if gdalData is None or gdalData == "" or not os.path.exists(gdalData):
+            res = QMessageBox.question(self, 'GDAL_DATA path',
+                                       "GDAL_DATA path is not exists:\n\n"
+                                       "Do you want to spefify new GDAL_DATA path?\n",
+                                       QMessageBox.Yes, QMessageBox.No)
+            if res == QMessageBox.Yes:
+                path = QFileDialog.getExistingDirectory(self, "Path to GDAL_DATA")
+                if os.path.exists(path):
+                    config.setGdalDataDir(path)
+            else:
+                config.setGdalDataDir(None)
 
     # Users tab related
     def initUsersTab(self):
