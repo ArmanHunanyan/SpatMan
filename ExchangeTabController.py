@@ -453,7 +453,16 @@ class ExchangeTabValidateController(QObject):
         def writeSRIDMismatch(self, expectedSRID, actualSRID):
             pass
 
-        def writeErrorField(self, report):
+        def writeMissingFieldsOnce(self, missingFields):
+            pass
+
+        def writeExtraFieldsOnce(self, extraFields):
+            pass
+
+        def writeNullFieldsOnce(self, nullFields):
+            pass
+
+        def writeErrorField(self, report, id):
             pass
 
         def finalize(self):
@@ -488,6 +497,18 @@ class ExchangeTabValidateController(QObject):
                 res = "Missing SRID: Expected %s" % str(expectedSRID)
             return res
 
+        def genMissingFieldsOnce(self, missingFields):
+            res = "Missing fields: %s" % ",".join(("'%s'" % field for field in missingFields))
+            return res
+
+        def genExtraFieldsOnce(self, extraFields):
+            res = "Extra fields: %s" % ",".join(("'%s'" % field for field in extraFields))
+            return res
+
+        def genNullFieldsOnce(self, nullFields):
+            res = "Null fields: %s" % ",".join(("'%s'" % field for field in nullFields))
+            return res
+
         def genErrorField(self, report):
             properties = report.properties()
 
@@ -509,14 +530,14 @@ class ExchangeTabValidateController(QObject):
             nullFields = report.nullFields()
             rangeViolations = report.rangeViolations()
 
-            if len(missingFields) != 0:
-                errors["Missing fields"] = ",".join(("'%s'" % field for field in missingFields))
+   #         if len(missingFields) != 0:
+   #             errors["Missing fields"] = ",".join(("'%s'" % field for field in missingFields))
 
-            if len(extraFields) != 0:
-                errors["Extra fields"] = ",".join(("'%s'" % field for field in extraFields))
+#            if len(extraFields) != 0:
+#                errors["Extra fields"] = ",".join(("'%s'" % field for field in extraFields))
 
-            if len(nullFields) != 0:
-                errors["Null fields"] = ",".join(("'%s'" % field for field in nullFields))
+#            if len(nullFields) != 0:
+#                errors["Null fields"] = ",".join(("'%s'" % field for field in nullFields))
 
             if len(rangeViolations) != 0:
                 errors["Range Violations"] = ",".join(("('%s' min = %s, max = %s, val = %s)" % (field[0], field[1], field[2], field[3]) for field in rangeViolations))
@@ -559,12 +580,21 @@ class ExchangeTabValidateController(QObject):
             self.m_file.write("---------------------------------------------------------------------------------\n")
             self.m_file.write(self.m_textGenerator.genSRIDMismatch(expectedSRID, actualSRID) + "\n")
 
-        def writeErrorField(self, report):
+        def writeMissingFieldsOnce(self, missingFields):
+            self.m_file.write(self.m_textGenerator.genMissingFieldsOnce(missingFields) + "\n")
+
+        def writeExtraFieldsOnce(self, extraFields):
+            self.m_file.write(self.m_textGenerator.genExtraFieldsOnce(extraFields) + "\n")
+
+        def writeNullFieldsOnce(self, nullFields):
+            self.m_file.write(self.m_textGenerator.genNullFieldsOnce(nullFields) + "\n")
+
+        def writeErrorField(self, report, id):
             self.m_file.write("---------------------------------------------------------------------------------\n")
-            self.m_file.write("Feauture :\n")
+            self.m_file.write("Record %s:\n" % id)
             props, errors = self.m_textGenerator.genErrorField(report)
-            msg = self._makePropertyTable(props, "\t")
-            self.m_file.write(msg)
+            #msg = self._makePropertyTable(props, "\t")
+            #self.m_file.write(msg)
             msg = self._makePropertyTable(errors, "")
             self.m_file.write(msg)
 
@@ -597,8 +627,17 @@ class ExchangeTabValidateController(QObject):
         def writeSRIDMismatch(self, expectedSRID, actualSRID):
             self.m_htmlGenerator.writeSRIDMismatch(expectedSRID, actualSRID)
 
-        def writeErrorField(self, report):
-            self.m_htmlGenerator.writeErrorField(report)
+        def writeMissingFieldsOnce(self, missingFields):
+            self.m_htmlGenerator.writeMissingFieldsOnce(missingFields)
+
+        def writeExtraFieldsOnce(self, extraFields):
+            self.m_htmlGenerator.writeExtraFieldsOnce(extraFields)
+
+        def writeNullFieldsOnce(self, nullFields):
+            self.m_htmlGenerator.writeNullFieldsOnce(nullFields)
+
+        def writeErrorField(self, report, id):
+            self.m_htmlGenerator.writeErrorField(report, id)
 
         def finalize(self):
             self.m_htmlGenerator.finalize()
@@ -635,20 +674,12 @@ class ExchangeTabValidateController(QObject):
             headerDiv.append(headerText)
             self.m_mainDiv.append(headerDiv)
 
-        def _makePropertyTable(self, propDict, border = 0, colWidth = None):
-            tableTag = self.m_soup.new_tag("table", align="left", border=str(border), cellspacing="0", cellpadding="0", width="100%")
-            if colWidth is not None:
-                colTag = self.m_soup.new_tag("col", width=str(colWidth))
-                tableTag.append(colTag)
+        def _makePropertyTable(self, propDict):
+            tableTag = self.m_soup.new_tag("ul")
 
             for name, value in propDict.items():
-                rowTag = self.m_soup.new_tag("tr", align="left", valign="top")
-                cellNameTag = self.m_soup.new_tag("td")
-                cellNameTag.string = name
-                cellValueTag = self.m_soup.new_tag("td")
-                cellValueTag.string = str(value)
-                rowTag.append(cellNameTag)
-                rowTag.append(cellValueTag)
+                rowTag = self.m_soup.new_tag("li")
+                rowTag.string = "%s: %s" % (name, str(value))
                 tableTag.append(rowTag)
 
             return tableTag
@@ -675,18 +706,33 @@ class ExchangeTabValidateController(QObject):
             infoDiv.string = self.m_textGenerator.genSRIDMismatch(expectedSRID, actualSRID)
             self.m_mainDiv.append(infoDiv)
 
-            mismatchDiv = self.m_soup.new_tag("p")
-            mismatchText = self.m_soup.new_tag("h1")
-            mismatchText.string = self.m_textGenerator.genSRIDMismatch(expectedSRID, actualSRID)
-            mismatchDiv.append(mismatchText)
-            self.m_mainDiv.append(mismatchDiv)
+        def writeMissingFieldsOnce(self, missingFields):
+            infoDiv = self.m_soup.new_tag("p")
+            infoDiv.string = self.m_textGenerator.genMissingFieldsOnce(missingFields)
+            self.m_mainDiv.append(infoDiv)
 
-        def writeErrorField(self, report):
+        def writeExtraFieldsOnce(self, extraFields):
+            infoDiv = self.m_soup.new_tag("p")
+            infoDiv.string = self.m_textGenerator.genExtraFieldsOnce(extraFields)
+            self.m_mainDiv.append(infoDiv)
+
+        def writeNullFieldsOnce(self, nullFields):
+            infoDiv = self.m_soup.new_tag("p")
+            infoDiv.string = self.m_textGenerator.genNullFieldsOnce(nullFields)
+            self.m_mainDiv.append(infoDiv)
+
+        def writeErrorField(self, report, id):
             props, errors = self.m_textGenerator.genErrorField(report)
-            errorDiv = self.m_soup.new_tag("p")
-            errorDiv.append(self._makePropertyTable(props, 1, 140))
-            errorDiv.append(self._makePropertyTable(errors))
-            self.m_mainDiv.append(errorDiv)
+            error = self.m_soup.new_tag("ul")
+            hdr = self.m_soup.new_tag("li")
+            hdr.string = "Record %s" % str(id)
+            error.append(hdr)
+            #errorDiv.append(self._makePropertyTable(props, 1, 140))
+            #recordDiv = self.m_soup.new_tag("p")
+            #recordDiv.string = "Record %s" % str(id)
+            #errorDiv.append(recordDiv)
+            error.append(self._makePropertyTable(errors))
+            self.m_mainDiv.append(error)
 
         def finalize(self):
             self.m_mainDiv.append(self.m_soup.new_tag("br"))
@@ -924,6 +970,7 @@ class ExchangeTabValidateController(QObject):
             QCoreApplication.processEvents()
 
         dir = tempfile.mkdtemp()
+        print(dir)
         try:
             self.doValidateImpl(dir)
         except:
@@ -932,7 +979,7 @@ class ExchangeTabValidateController(QObject):
             shutil.rmtree(dir)
             pass
 
-        if len(self.m_noSRIDFiles) != "":
+        if len(self.m_noSRIDFiles) != 0:
             QMessageBox.warning(None, "No SRID", "Following files have no associated SRID. Database SRID "
                                       "%s will be used instead\n\t %s" % (self.m_expectedSRID,
                                       "\n\t".join(self.m_noSRIDFiles)))
@@ -994,8 +1041,29 @@ class ExchangeTabValidateController(QObject):
                 if self.m_sridMismatch is not None:
                     generator.writeSRIDMismatch(self.m_sridMismatch[0], self.m_sridMismatch[1])
 
+                missingFields = list()
+                extraFields = list()
+                nullFields = list()
                 for fReport in self.m_feautureReports:
-                    fReport.generate(generator)
+                    missingFields += fReport.missingFields()
+                    extraFields += fReport.extraFields()
+                    nullFields += fReport.nullFields()
+
+
+
+                if len(missingFields) != 0:
+                    generator.writeMissingFieldsOnce(list(set(missingFields)))
+
+                if len(extraFields) != 0:
+                    generator.writeExtraFieldsOnce(list(set(extraFields)))
+
+                if len(nullFields) != 0:
+                    generator.writeNullFieldsOnce(list(set(nullFields)))
+
+                id = 1
+                for fReport in self.m_feautureReports:
+                    fReport.generate(generator, id)
+                    id += 1
 
         def dump(self):
             error = False
@@ -1064,8 +1132,8 @@ class ExchangeTabValidateController(QObject):
         def markExtentViolation(self, northLat, southLat, westLong, eastLong, violatedCoords):
             self.m_extentViolation = (northLat, southLat, westLong, eastLong, violatedCoords)
 
-        def generate(self, generator):
-            generator.writeErrorField(self)
+        def generate(self, generator, id):
+            generator.writeErrorField(self, id)
 
         def dump(self):
             if self.m_typeMismatch:

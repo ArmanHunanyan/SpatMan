@@ -10,5 +10,7 @@
     <file>icons/pdf.png</file>
     <file>icons/html.png</file>
     <file>icons/text.png</file>
+    <file>icons/correct.png</file>
+    <file>icons/incorrect.png</file>
 </qresource>
 </RCC>

@@ -49,7 +49,7 @@
       <enum>QTabWidget::North</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="schemasWidget">
       <property name="enabled">
@@ -2434,220 +2434,55 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tabWidgetPage2">
+     <widget class="QWidget" name="reportsTab">
       <attribute name="title">
-       <string>Audits</string>
+       <string>Reports</string>
       </attribute>
-      <widget class="QGroupBox" name="groupBox_14">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>151</width>
-         <height>81</height>
-        </rect>
-       </property>
-       <property name="title">
-        <string>Schema</string>
-       </property>
-       <widget class="QPushButton" name="pushButton_5">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>50</y>
-          <width>131</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="toolTip">
-         <string extracomment="Read a new schema , loading it into the database."/>
-        </property>
-        <property name="text">
-         <string>Schema Read Load</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_4">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>131</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="toolTip">
-         <string extracomment="Run a series of tests to audit the schema in terms of, metadata, lineage, geometries, indexes, etc."/>
-        </property>
-        <property name="text">
-         <string>Schema Audit</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QGroupBox" name="groupBox_15">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>100</y>
-         <width>151</width>
-         <height>251</height>
-        </rect>
-       </property>
-       <property name="title">
-        <string>Geometries</string>
-       </property>
-       <widget class="QPushButton" name="pushButton_6">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>220</y>
-          <width>131</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Validate</string>
-        </property>
-       </widget>
-       <widget class="QListView" name="listView_6">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>131</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QGroupBox" name="groupBox_17">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>100</y>
-         <width>151</width>
-         <height>251</height>
-        </rect>
-       </property>
-       <property name="title">
-        <string>Networks</string>
-       </property>
-       <widget class="QPushButton" name="pushButton_15">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>220</y>
-          <width>131</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Validate</string>
-        </property>
-       </widget>
-       <widget class="QListView" name="listView_8">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>131</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QGroupBox" name="groupBox_16">
-       <property name="geometry">
-        <rect>
-         <x>330</x>
-         <y>100</y>
-         <width>151</width>
-         <height>251</height>
-        </rect>
-       </property>
-       <property name="title">
-        <string>Relations</string>
-       </property>
-       <widget class="QPushButton" name="pushButton_14">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>220</y>
-          <width>131</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Validate</string>
-        </property>
-       </widget>
-       <widget class="QListView" name="listView_7">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>131</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QGroupBox" name="groupBox_19">
-       <property name="geometry">
-        <rect>
-         <x>490</x>
-         <y>100</y>
-         <width>151</width>
-         <height>251</height>
-        </rect>
-       </property>
-       <property name="title">
-        <string>Table Analysis</string>
-       </property>
-       <widget class="QPushButton" name="pushButton_16">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>220</y>
-          <width>131</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Validate</string>
-        </property>
-       </widget>
-       <widget class="QListView" name="listView_9">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>131</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QLabel" name="label_60">
-       <property name="geometry">
-        <rect>
-         <x>300</x>
-         <y>420</y>
-         <width>151</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>28</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(255, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string>Phase 2</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_14">
+       <item>
+        <widget class="QGroupBox" name="reportsReportsGroupBox">
+         <property name="title">
+          <string>Reports</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_31">
+          <item>
+           <widget class="TableWidget" name="reportsReportsTable">
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="reportsHorizontalLayout">
+            <item>
+             <spacer name="reportsHorizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="reportsRunSelectedBtn">
+              <property name="text">
+               <string>Run Selected</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="exchangeWidget">
       <property name="enabled">
@@ -2660,7 +2495,7 @@
        <item>
         <widget class="QTabWidget" name="exchangeNestedTabs">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="ExportImport">
           <property name="accessibleName">
@@ -3253,208 +3088,1264 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tabWidgetPage4">
+     <widget class="QWidget" name="relationshipsTab">
       <attribute name="title">
        <string>Relationships</string>
       </attribute>
-      <widget class="QTableWidget" name="tableWidget_3">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>20</y>
-         <width>711</width>
-         <height>192</height>
-        </rect>
-       </property>
-       <property name="statusTip">
-        <string extracomment="Data stored in [sm_join]  Right-Click provide option to  delete - with Confirm Message Box."/>
-       </property>
-       <column>
-        <property name="text">
-         <string>New Column</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>FromTable</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>FromColumn</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>ToTable</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>JoinType</string>
-        </property>
-       </column>
-      </widget>
-      <widget class="QGroupBox" name="groupBox_23">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>250</y>
-         <width>481</width>
-         <height>201</height>
-        </rect>
-       </property>
-       <property name="title">
-        <string>Add a Relation</string>
-       </property>
-       <widget class="QLabel" name="label_26">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>30</y>
-          <width>81</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>From Table</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox_16">
-        <property name="geometry">
-         <rect>
-          <x>110</x>
-          <y>30</y>
-          <width>150</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox_17">
-        <property name="geometry">
-         <rect>
-          <x>110</x>
-          <y>60</y>
-          <width>150</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_78">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>60</y>
-          <width>81</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>From Column</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox_18">
-        <property name="geometry">
-         <rect>
-          <x>110</x>
-          <y>90</y>
-          <width>150</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_79">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>90</y>
-          <width>81</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>To Table</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox_19">
-        <property name="geometry">
-         <rect>
-          <x>110</x>
-          <y>120</y>
-          <width>150</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_80">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>120</y>
-          <width>81</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>To Column</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_21">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>150</y>
-          <width>121</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="statusTip">
-         <string extracomment="This button must be greyed out until validation is passed."/>
-        </property>
-        <property name="text">
-         <string>Add</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_81">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>150</y>
-          <width>81</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Type</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox_20">
-        <property name="geometry">
-         <rect>
-          <x>110</x>
-          <y>150</y>
-          <width>150</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_35">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>120</y>
-          <width>121</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="statusTip">
-         <string extracomment="Run a count based on join.  If record count on both tables are not null AND the join count is zero, prompt for error, but accept yes.  If join count is more than sum of records in both tables, we have a potential Cartesian Product.  Prompt the user to reconsider as this may impact performance."/>
-        </property>
-        <property name="text">
-         <string>Validate</string>
-        </property>
-       </widget>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_31">
+       <item>
+        <widget class="QTabWidget" name="relationshipsNestedTab">
+         <property name="whatsThis">
+          <string extracomment="Lookup Table Configuration"/>
+         </property>
+         <property name="currentIndex">
+          <number>2</number>
+         </property>
+         <widget class="QWidget" name="relLookupTables">
+          <attribute name="title">
+           <string>Lookup Tables</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_63">
+           <item>
+            <widget class="QLabel" name="relLookupTablesMainLabel">
+             <property name="text">
+              <string>Availble tables</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="relLookupTablesMainLayout">
+             <item>
+              <layout class="QVBoxLayout" name="relLookupTablesAvailbleTablesLayout">
+               <item>
+                <layout class="QHBoxLayout" name="relLookupTablesAvailbleTablesFilterLayout">
+                 <item>
+                  <widget class="QLineEdit" name="relLookupTablesFilterEdit">
+                   <property name="toolTip">
+                    <string extracomment="Table filter mask."/>
+                   </property>
+                   <property name="statusTip">
+                    <string extracomment="Wilcard-enabled filter.  The content of this should be used to filter the table list"/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="relLookupTablesFilterBtn">
+                   <property name="toolTip">
+                    <string extracomment="Filters tables in list below"/>
+                   </property>
+                   <property name="statusTip">
+                    <string extracomment="activates the filter search"/>
+                   </property>
+                   <property name="text">
+                    <string>Filter</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QListWidget" name="relLookupTablesTableListWidget">
+                 <property name="toolTip">
+                  <string extracomment="Lists all the tables from the current schema."/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="relLookupTablesRightLayout">
+               <item>
+                <widget class="QGroupBox" name="relLookupTablesPropsGroupBox">
+                 <property name="title">
+                  <string>Table</string>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_30">
+                  <item>
+                   <layout class="QGridLayout" name="relLookupTablesPropsLayout">
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="relLookupTablesLookupNameLabel">
+                      <property name="text">
+                       <string>Lookup Name</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLineEdit" name="relLookupTablesLookupNameEdit">
+                      <property name="toolTip">
+                       <string extracomment="Name for the Lookup or Picklist. Stored in lu_tbls.lu_name "/>
+                      </property>
+                      <property name="statusTip">
+                       <string extracomment="Wilcard-enabled filter.  The content of this should be used to filter the table list"/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="QLabel" name="relLookupTablesApplicationLabel">
+                      <property name="text">
+                       <string>Application</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QComboBox" name="relLookupTablesApplicationCombo">
+                      <property name="toolTip">
+                       <string extracomment="Picklist from sm_apps. Stored in lu_tbls.sm_apps"/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QLabel" name="relLookupTablesSourceTableLabel">
+                      <property name="text">
+                       <string>Source Table</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="1">
+                     <widget class="QLineEdit" name="relLookupTablesSourceTableEdit">
+                      <property name="toolTip">
+                       <string extracomment="Not editable.  Will be the same as the value in the list on the right.  Stored in lu_tbls.lu_tbl_name "/>
+                      </property>
+                      <property name="statusTip">
+                       <string extracomment="Wilcard-enabled filter.  The content of this should be used to filter the table list"/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0">
+                     <widget class="QLabel" name="relLookupTablesLookupDescriptionLabel">
+                      <property name="text">
+                       <string>Lookup Description</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="1" colspan="2">
+                     <widget class="QLineEdit" name="relLookupTablesLookupDescriptionEdit">
+                      <property name="toolTip">
+                       <string extracomment="A description of the lookup table or picklist.  Stored in lu_tbls.lu_tbl_desc"/>
+                      </property>
+                      <property name="statusTip">
+                       <string extracomment="Wilcard-enabled filter.  The content of this should be used to filter the table list"/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="0">
+                     <widget class="QLabel" name="relLookupTablesFilterLabel">
+                      <property name="text">
+                       <string>Filter</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="1" colspan="2">
+                     <widget class="QLineEdit" name="relLookupTablesFilterPropEdit">
+                      <property name="toolTip">
+                       <string extracomment="Filter to be applied to the table.  This must be a SQL segment that can be applied as a WHERE clause.  Stored in lu_tbls.lu_filt."/>
+                      </property>
+                      <property name="statusTip">
+                       <string extracomment="Wilcard-enabled filter.  The content of this should be used to filter the table list"/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="3">
+                     <widget class="QPushButton" name="relLookupTablesFilterPropTestBtn">
+                      <property name="toolTip">
+                       <string extracomment="Return the result from (select count(*) from [lu_tbl_name] WHERE [lu_filt])"/>
+                      </property>
+                      <property name="text">
+                       <string>Test</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="5" column="0">
+                     <widget class="QLabel" name="relLookupTablesColumnForCodeLabel">
+                      <property name="text">
+                       <string>Column for Code</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="5" column="1">
+                     <widget class="QComboBox" name="relLookupTablesColumnForCodeCombo">
+                      <property name="toolTip">
+                       <string extracomment="Picklist from columns in [lu_tbl_name].   Stored in lu_tbls.lu_code"/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="5" column="2">
+                     <widget class="QCheckBox" name="relLookupTablesUseDistinctChk">
+                      <property name="toolTip">
+                       <string extracomment="When creating the lookup, use DISTINCT in the code.  Using this option must disable the use of lu_desc as it will create unwanted values.  the test will now be as follows: (select count(*), [lu_code] from [lu_tbl_name] WHERE [lu_filt] group by [lu_code])  "/>
+                      </property>
+                      <property name="text">
+                       <string>Use DISTINCT</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="6" column="0">
+                     <widget class="QLabel" name="relLookupTablesColumnForDescriptionLabel">
+                      <property name="text">
+                       <string>Column for Description</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="6" column="1">
+                     <widget class="QComboBox" name="relLookupTablesColumnForDescriptionCombo">
+                      <property name="toolTip">
+                       <string extracomment="Picklist from columns in [lu_tbl_name]. (Can be the same as [lu_code].   Stored in lu_tbls.lu_desc"/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <spacer name="relLookupTablesVerticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="relLookupTablesButtonLayout">
+                 <item>
+                  <spacer name="relLookupTablesButtonSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="relLookupTablesResetButton">
+                   <property name="text">
+                    <string>Reset</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="relLookupTablesSaveButton">
+                   <property name="text">
+                    <string>Save</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="relAttributeJoins">
+          <attribute name="title">
+           <string>Attribute Joins</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_17">
+           <item>
+            <widget class="QGroupBox" name="relAttributeJoinsGroupBox">
+             <property name="title">
+              <string>Table Attribute Relationships</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_32">
+              <item>
+               <widget class="TableWidget" name="relAttributeJoinsTable">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="relAttributeJoinsMainSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Minimum</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="relAttributeJoinsButtonsLayout">
+                <item>
+                 <spacer name="relAttributeJoinsButtonsSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="relAttributeJoinsResetButton">
+                  <property name="statusTip">
+                   <string extracomment="Run a count based on join.  If record count on both tables are not null AND the join count is zero, prompt for error, but accept yes.  If join count is more than sum of records in both tables, we have a potential Cartesian Product.  Prompt the user to reconsider as this may impact performance."/>
+                  </property>
+                  <property name="text">
+                   <string>Reset</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="relAttributeJoinsSaveButton">
+                  <property name="statusTip">
+                   <string extracomment="This button must be greyed out until validation is passed."/>
+                  </property>
+                  <property name="text">
+                   <string>Save</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_28">
+          <attribute name="title">
+           <string>Networks</string>
+          </attribute>
+          <widget class="QGroupBox" name="groupBox_23">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>10</y>
+             <width>921</width>
+             <height>541</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>Network Relationships</string>
+           </property>
+           <widget class="QLineEdit" name="lineEdit_7">
+            <property name="geometry">
+             <rect>
+              <x>520</x>
+              <y>20</y>
+              <width>131</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="whatsThis">
+             <string extracomment="Name for the Network.  This will be loaded in the list on the left."/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_13">
+            <property name="geometry">
+             <rect>
+              <x>410</x>
+              <y>20</y>
+              <width>101</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Network  Name</string>
+            </property>
+           </widget>
+           <widget class="QGroupBox" name="groupBox_12">
+            <property name="geometry">
+             <rect>
+              <x>410</x>
+              <y>260</y>
+              <width>321</width>
+              <height>211</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+              <underline>false</underline>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(215, 215, 215);</string>
+            </property>
+            <property name="title">
+             <string>Segment Component</string>
+            </property>
+            <widget class="QComboBox" name="comboBox_7">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>90</y>
+               <width>171</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="whatsThis">
+              <string extracomment="List of columns from the table referenced above, excluding the Start Node Column"/>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_14">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>30</y>
+               <width>111</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Table title</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_15">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>60</y>
+               <width>131</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Start Node Column</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="comboBox_8">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>60</y>
+               <width>171</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="whatsThis">
+              <string extracomment="List of columns from the table referenced above"/>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_18">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>90</y>
+               <width>121</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>End Node Column</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="lineEdit_8">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>120</y>
+               <width>171</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="whatsThis">
+              <string extracomment="Filter to be applied to Segment table 1.  "/>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_64">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>120</y>
+               <width>81</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Table Filter</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="comboBox_9">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>30</y>
+               <width>171</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="whatsThis">
+              <string extracomment="List of [Table Titles] from sm_tables where the sp_type = 'line' "/>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="lineEdit_20">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>150</y>
+               <width>171</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="whatsThis">
+              <string extracomment="Filter to be applied to Node table.  "/>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_65">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>150</y>
+               <width>81</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Stop Predicate</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_66">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>180</y>
+               <width>81</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Snap to Nodes</string>
+             </property>
+            </widget>
+            <widget class="QRadioButton" name="radioButton_21">
+             <property name="geometry">
+              <rect>
+               <x>190</x>
+               <y>180</y>
+               <width>41</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>No</string>
+             </property>
+            </widget>
+            <widget class="QRadioButton" name="radioButton_22">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>180</y>
+               <width>41</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Yes</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QGroupBox" name="groupBox_16">
+            <property name="geometry">
+             <rect>
+              <x>410</x>
+              <y>50</y>
+              <width>321</width>
+              <height>181</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+              <underline>false</underline>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(215, 215, 215);</string>
+            </property>
+            <property name="title">
+             <string>Node Component</string>
+            </property>
+            <widget class="QLabel" name="label_67">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>30</y>
+               <width>111</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Table title</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_68">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>60</y>
+               <width>131</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Node ID Column</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="comboBox_58">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>60</y>
+               <width>171</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="whatsThis">
+              <string extracomment="List of columns from the table referenced above"/>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="lineEdit_9">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>90</y>
+               <width>171</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="whatsThis">
+              <string extracomment="Filter to be applied to Node table.  "/>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_69">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>90</y>
+               <width>81</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Table Filter</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="comboBox_59">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>30</y>
+               <width>171</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="whatsThis">
+              <string extracomment="List of [Table Titles] from sm_tables where the sp_type = 'point' "/>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="lineEdit_21">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>120</y>
+               <width>171</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="whatsThis">
+              <string extracomment="Filter to be applied to Node table.  "/>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_70">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>120</y>
+               <width>81</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Stop Predicate</string>
+             </property>
+            </widget>
+            <widget class="QRadioButton" name="radioButton_23">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>150</y>
+               <width>41</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Yes</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_71">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>150</y>
+               <width>81</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Snap to Segment</string>
+             </property>
+            </widget>
+            <widget class="QRadioButton" name="radioButton_24">
+             <property name="geometry">
+              <rect>
+               <x>190</x>
+               <y>150</y>
+               <width>41</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>No</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QPushButton" name="pushButton_45">
+            <property name="geometry">
+             <rect>
+              <x>740</x>
+              <y>80</y>
+              <width>101</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="statusTip">
+             <string extracomment="This button must be greyed out until validation is passed."/>
+            </property>
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_46">
+            <property name="geometry">
+             <rect>
+              <x>740</x>
+              <y>50</y>
+              <width>101</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="statusTip">
+             <string extracomment="Run a count based on join.  If record count on both tables are not null AND the join count is zero, prompt for error, but accept yes.  If join count is more than sum of records in both tables, we have a potential Cartesian Product.  Prompt the user to reconsider as this may impact performance."/>
+            </property>
+            <property name="text">
+             <string>Validate</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_47">
+            <property name="geometry">
+             <rect>
+              <x>740</x>
+              <y>340</y>
+              <width>101</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="statusTip">
+             <string extracomment="This button must be greyed out until validation is passed."/>
+            </property>
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_48">
+            <property name="geometry">
+             <rect>
+              <x>740</x>
+              <y>310</y>
+              <width>101</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="statusTip">
+             <string extracomment="Run a count based on join.  If record count on both tables are not null AND the join count is zero, prompt for error, but accept yes.  If join count is more than sum of records in both tables, we have a potential Cartesian Product.  Prompt the user to reconsider as this may impact performance."/>
+            </property>
+            <property name="text">
+             <string>Validate</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_49">
+            <property name="geometry">
+             <rect>
+              <x>810</x>
+              <y>510</y>
+              <width>101</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="statusTip">
+             <string extracomment="This button must be greyed out until validation is passed."/>
+            </property>
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_50">
+            <property name="geometry">
+             <rect>
+              <x>810</x>
+              <y>480</y>
+              <width>101</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="statusTip">
+             <string extracomment="This button must be greyed out until validation is passed."/>
+            </property>
+            <property name="text">
+             <string>Clear</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_51">
+            <property name="geometry">
+             <rect>
+              <x>810</x>
+              <y>450</y>
+              <width>101</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="statusTip">
+             <string extracomment="Run a count based on join.  If record count on both tables are not null AND the join count is zero, prompt for error, but accept yes.  If join count is more than sum of records in both tables, we have a potential Cartesian Product.  Prompt the user to reconsider as this may impact performance."/>
+            </property>
+            <property name="text">
+             <string>Validate</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_72">
+            <property name="geometry">
+             <rect>
+              <x>670</x>
+              <y>20</y>
+              <width>101</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Network  Type</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comboBox_60">
+            <property name="geometry">
+             <rect>
+              <x>780</x>
+              <y>20</y>
+              <width>121</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>Node Only</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Segment Only</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pressure Network</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Hierarchical Network</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Conduit Network</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Data Network</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QWidget" name="">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>258</width>
+              <height>287</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_34">
+             <item>
+              <widget class="QTreeView" name="treeView_8">
+               <property name="whatsThis">
+                <string extracomment="List of Network Relationships"/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="groupBox_17">
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(215, 215, 215);</string>
+               </property>
+               <property name="title">
+                <string>Network Component</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_33">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_13">
+                  <item>
+                   <widget class="QLabel" name="label_73">
+                    <property name="text">
+                     <string>Network title</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_61">
+                    <property name="whatsThis">
+                     <string extracomment="List of [Table Titles] from sm_tables where the sp_type = 'line' "/>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_15">
+                  <item>
+                   <spacer name="horizontalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_52">
+                    <property name="statusTip">
+                     <string extracomment="This button must be greyed out until validation is passed."/>
+                    </property>
+                    <property name="text">
+                     <string>Add</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="tab_29">
+          <attribute name="title">
+           <string>Geometric</string>
+          </attribute>
+          <widget class="QGroupBox" name="groupBox_18">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>911</width>
+             <height>531</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>Point Relationships</string>
+           </property>
+           <widget class="QTableWidget" name="tableWidget_8">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>891</width>
+              <height>401</height>
+             </rect>
+            </property>
+            <property name="statusTip">
+             <string extracomment="Data stored in [sm_join]  Right-Click provide option to  delete - with Confirm Message Box."/>
+            </property>
+            <column>
+             <property name="text">
+              <string>Point Table</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>To Table</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Pnt FK Column</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>To PK Column</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Results Column</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Geom Relationship</string>
+             </property>
+            </column>
+           </widget>
+           <widget class="QPushButton" name="pushButton_53">
+            <property name="geometry">
+             <rect>
+              <x>800</x>
+              <y>500</y>
+              <width>101</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="statusTip">
+             <string extracomment="This button must be greyed out until validation is passed."/>
+            </property>
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_74">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>430</y>
+              <width>81</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Point Table</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_105">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>460</y>
+              <width>81</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>To Table</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comboBox_62">
+            <property name="geometry">
+             <rect>
+              <x>400</x>
+              <y>430</y>
+              <width>150</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="toolTip">
+             <string extracomment="The field in the POINT table where the foreign key will be stored."/>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comboBox_63">
+            <property name="geometry">
+             <rect>
+              <x>750</x>
+              <y>430</y>
+              <width>150</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="toolTip">
+             <string extracomment="The relationship type."/>
+            </property>
+            <item>
+             <property name="text">
+              <string>Point on Centroid</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Align to Segment</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Perpendicular Align to Segment</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Segment Offset</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Snap to Segment Midpoint</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Snap to Segment Endpoint</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QLabel" name="label_106">
+            <property name="geometry">
+             <rect>
+              <x>310</x>
+              <y>460</y>
+              <width>81</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>PK Column</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comboBox_64">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>460</y>
+              <width>150</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="toolTip">
+             <string extracomment="Select a table name from sm_tables where sp_type in ( 'POLYGON', 'LINESTRING')"/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_107">
+            <property name="geometry">
+             <rect>
+              <x>580</x>
+              <y>430</y>
+              <width>161</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Geometric Relationship</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comboBox_65">
+            <property name="geometry">
+             <rect>
+              <x>400</x>
+              <y>460</y>
+              <width>150</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="toolTip">
+             <string extracomment="Column in the Line or polygon table that will be used as the key to link with.  This shoud default to the primary key of that table."/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_108">
+            <property name="geometry">
+             <rect>
+              <x>310</x>
+              <y>430</y>
+              <width>91</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>FK Column</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comboBox_66">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>430</y>
+              <width>150</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="toolTip">
+             <string extracomment="Select a table name from sm_tables where sp_type = 'POINT'"/>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comboBox_67">
+            <property name="geometry">
+             <rect>
+              <x>750</x>
+              <y>460</y>
+              <width>150</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <property name="toolTip">
+             <string extracomment="A picklist that lists the columns from the POINT table where we will write relationship test results.  On the Audit tab we will have a test for Geometric relationships.  This will return a True or False. "/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_109">
+            <property name="geometry">
+             <rect>
+              <x>630</x>
+              <y>460</y>
+              <width>91</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Results Column</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="configuration">
       <attribute name="title">

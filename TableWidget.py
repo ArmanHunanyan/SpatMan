@@ -15,7 +15,7 @@ from PyQt5.QtGui import QPixmap
 
 from PyQt5.QtCore import Qt
 
-class TableWidget(QWidget):
+class TableWidget(QFrame):
 
     def __init__(self, parent):
         super(TableWidget, self).__init__(parent)
@@ -96,6 +96,7 @@ class TableWidget(QWidget):
         self.m_pdfBtn.setAutoRaise(True)
         self.m_verticalLayout.addWidget(self.m_pdfBtn)
         self.m_pdfBtn.setVisible(False)
+        self.m_pdfBtn.setToolTip("Generate PDF report")
 
         self.m_htmlBtn = QToolButton(self.m_toolBtnFrame)
         icon1 = QIcon()
@@ -104,6 +105,7 @@ class TableWidget(QWidget):
         self.m_htmlBtn.setAutoRaise(True)
         self.m_verticalLayout.addWidget(self.m_htmlBtn)
         self.m_htmlBtn.setVisible(False)
+        self.m_htmlBtn.setToolTip("Generate HTML report")
 
         self.m_textBtn = QToolButton(self.m_toolBtnFrame)
         icon1 = QIcon()
@@ -112,6 +114,7 @@ class TableWidget(QWidget):
         self.m_textBtn.setAutoRaise(True)
         self.m_verticalLayout.addWidget(self.m_textBtn)
         self.m_textBtn.setVisible(False)
+        self.m_textBtn.setToolTip("Generate report in text format")
 
         spacerItem = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Expanding)
         self.m_verticalLayout.addItem(spacerItem)

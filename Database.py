@@ -8,9 +8,16 @@ from TableMetadata import TableMetadata
 from TableMetadata import TableDataPolicy
 
 from TableInfo import TableInfo
+from collections import namedtuple
 
 def quoteString(s):
     return str(s).replace("'", "''")
+
+def wrapString(s):
+    return "\'%s\'" % s
+
+def quoteWrap(s):
+    return wrapString(quoteString(s))
 
 class DbNotFound(Exception):
     pass
@@ -62,6 +69,15 @@ class DBCursorWrapper:
         rec = self.m_query.record()
         while self.m_query.next():
             res.append(tuple(None if self.m_query.isNull(idx) else self.m_query.value(idx)  for idx in range(rec.count())))
+
+        return res
+
+    def fetchallNamed(self):
+        res = []
+        rec = self.m_query.record()
+        NamedRecord = namedtuple("Record", [rec.fieldName(idx) for idx in range(rec.count())])
+        while self.m_query.next():
+            res.append(NamedRecord(*[None if self.m_query.isNull(idx) else self.m_query.value(idx)  for idx in range(rec.count())]))
 
         return res
 
@@ -273,6 +289,33 @@ class ClientDatabase(DatabaseBase):
 
     def localDatabase(self):
         return self.m_localDatabase
+
+    def validateJoin(self, _join, schema):
+        join = _join
+        join.tableFrom = schema + "." + join.tableFrom
+        join.tableTo = schema + "." + join.tableTo
+        if join.joinType == "Inner Join":
+            sql = "SELECT count(*) FROM %s as A INNER JOIN %s as B ON A.%s = B.%s" % \
+                  (join.tableFrom, join.tableTo, join.columnFrom, join.columnTo)
+        elif join.joinType == "Left Join":
+            sql = "SELECT count(*) FROM %s as A LEFT JOIN %s as B ON A.%s = B.%s" % \
+                  (join.tableFrom, join.tableTo, join.columnFrom, join.columnTo)
+        elif join.joinType == "Right Join":
+            sql = "SELECT count(*) FROM %s as A RIGHT JOIN %s as B ON A.%s = B.%s" % \
+                  (join.tableFrom, join.tableTo, join.columnFrom, join.columnTo)
+        elif join.joinType == "Outer Join":
+            sql = "SELECT count(*) FROM %s as A FULL OUTER JOIN %s as B ON A.%s = B.%s" % \
+                  (join.tableFrom, join.tableTo, join.columnFrom, join.columnTo)
+        elif join.joinType == "Custom Join":
+            sql = "SELECT count(*) FROM %s as A, %s as B WHERE %s" % \
+                  (join.tableFrom, join.tableTo, join.where)
+        else:
+            assert False
+
+        cur = self.m_connection.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+        return res[0][0] != 0
 
     def uidColumn(self):
         idColId = 0
@@ -794,6 +837,12 @@ class Database(DatabaseBase):
         else:
             return res
 
+    def executeQueryNamed(self, query):
+        cur = self.m_connection.cursor()
+        cur.execute(query)
+        res = cur.fetchallNamed()
+        return res
+
     def localTableList(self, connId, orphans):
         if not orphans:
             return self.executeListQuery("SELECT table_name FROM sm_tables WHERE conn_id = %s" % connId)
@@ -1157,6 +1206,44 @@ class Database(DatabaseBase):
             return None
         return "" if res[0] is None else res[0], True if res[1] == 'Y' else False
 
+    # Report management
+    def reportList(self):
+        cur = self.m_connection.cursor()
+        cur.execute("SELECT rep_name, rep_descr, rep_type, rep_script, rep_script_path, in_file FROM sm_report ORDER BY rep_id ASC")
+        res = cur.fetchall()
+        ares = []
+        for r in res:
+            ares.append(r[:-1] + (True if r[-1] == 'Y' else False,))
+        return ares
+
+    def insertReport(self, idx, rep):
+        idx = idx + 1
+        cur = self.m_connection.cursor()
+        # Update indices
+        cur.execute("UPDATE sm_report SET rep_id = rep_id + 1 WHERE rep_id >= %s;" % idx)
+        cur.execute("INSERT INTO sm_report (rep_id, rep_name, rep_descr, rep_type, rep_script, rep_script_path, in_file) VALUES \n"
+                    "(%s, %s, %s, %s, %s, %s, %s)" % (idx, quoteWrap(rep.name), quoteWrap(rep.description),
+                                                  quoteWrap(rep.type), quoteWrap(rep.script), quoteWrap(rep.scriptPath),
+                                                  wrapString("Y" if rep.storeInFile else "N")))
+
+    def updateReport(self, idx, rep):
+        idx = idx + 1
+        cur = self.m_connection.cursor()
+        cur.execute("UPDATE sm_report SET rep_name = %s, rep_descr = %s, rep_type = %s, "
+                    "rep_script = %s, rep_script_path = %s, in_file = %s WHERE rep_id = %s; \n"
+                            % (quoteWrap(rep.name), quoteWrap(rep.description),
+                                     quoteWrap(rep.type), quoteWrap(rep.script), quoteWrap(rep.scriptPath),
+                                        wrapString("Y" if rep.storeInFile else "N"), idx))
+
+    def deleteReport(self, idx):
+        idx = idx + 1
+        cur = self.m_connection.cursor()
+        cur.execute("DELETE FROM sm_report                  \n"
+                    "WHERE                                  \n"
+                    "    rep_id = '%s'                      \n"
+                    % idx)
+        cur.execute("UPDATE sm_report SET rep_id = rep_id - 1 WHERE rep_id >= %s;" % idx)
+        self.m_connection.commit()
 
     # Schema groups management
     schemaGroupListChangedSignal = pyqtSignal()

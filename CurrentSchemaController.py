@@ -11,6 +11,8 @@ from SchemasCreateTablesController import SchemasCreateTablesController
 from SchemasMetadataController import SchemasMetadataController
 from SchemasDataPolicyController import SchemasDataPolicyController
 from ExchangeTabController import ExchangeTabController
+from ReportsTabController import ReportsTabController
+from RelationshipsTabController import RelationshipsTabController
 from Configuration import Configuration
 
 class CurrentSchemaController(QObject):
@@ -72,6 +74,15 @@ class CurrentSchemaController(QObject):
                                                                           self.m_currentSchemaName,
                                                                           self.m_currentSchemaId,
                                                                           host, port, dbName, user, password)
+        self.m_reportsTabController = ReportsTabController(self.ui, self.m_clientDatabase,
+                                                                          self.m_currentSchemaName,
+                                                                          self.m_currentSchemaId,
+                                                                          host, port, dbName, user, password)
+
+        self.m_relationshipsTabController = RelationshipsTabController(self.ui, self.m_clientDatabase,
+                                                         self.m_currentSchemaName,
+                                                         self.m_currentSchemaId,
+                                                         host, port, dbName, user, password)
 
     def constructCreateTableTab(self):
         self.m_schemasCreateTablesController = None
